@@ -11,8 +11,10 @@ $lightGreyBorder: #f2f2f2;
 
 /* Variations in base color */
 $baseDark: darken($baseColor, 20%);
-$baseMedium: tint(adjust-hue($baseColor, -10%), 15%);
-$baseLight: tint(adjust-hue($baseColor, -10%), 85%);
+//$baseMedium: tint(adjust-hue($baseColor, -10%), 15%);
+//$baseLight: tint(adjust-hue($baseColor, -10%), 85%);
+$baseMedium: adjust-hue($baseColor, -10%);
+$baseLight: adjust-hue($baseColor, -10%);
 $baseBright: tint($linkColor, 10%);
 $baseMutedDark: darken($baseDark, 7%);
 $baseMutedMedium: $baseMedium;

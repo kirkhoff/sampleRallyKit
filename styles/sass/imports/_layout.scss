@@ -9,7 +9,7 @@
 }
 
 .bottomBorder {
-//    border-bottom: 1px solid shade($baseMutedLight, 10%);
+    border-bottom: 1px solid shade($baseMutedLight, 10%);
     margin-bottom: 18px;
     padding-bottom: 18px;
     span.description {
@@ -92,8 +92,8 @@
     overflow: hidden;
 }
 .borderTopBtm {
-//    border-bottom: solid 1px shade($baseMutedLight, 10%);
-//    border-top: solid 1px shade($baseMutedLight, 10%);
+    border-bottom: solid 1px shade($baseMutedLight, 10%);
+    border-top: solid 1px shade($baseMutedLight, 10%);
     margin: 0 0 10px;
     padding: 10px 0;
 }

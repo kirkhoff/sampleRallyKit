@@ -10,164 +10,222 @@
     <script src="./templates/modal.html"></script>
 </head>
 <body ng-app="sampleApp" ng-controller="modalCtrl">
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<h5>Header 5</h5>
-<h6>Header 6</h6>
-<p>paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<br/>
-Anchor: <a href="http://www.werally.com">go to rally!</a>
-<br/>
-<button class="robo-btn">normal button</button>
-<button class="robo-btn robo-btn-action">action button</button>
-<button class="robo-btn robo-btn-lg">large button</button>
-<button class="robo-btn disabled">disabled button</button>
-<br/>
-<br/>
-<button class="robo-btn" ng-click="openModal()">click to open modal</button>
-<br/>
-<h1>Sample Form:</h1>
-<form name="fulfillmentForm" novalidate id="fulfillmentForm">
-    <h2>Shipping address</h2>
-    <p>
-        <label for="firstName" class="hidden508">First name</label>
-        <input id="firstName" ng-model="claimData.firstName" type="text" ng-required="true" placeholder="First name">
-    </p>
-    <p>
-        <label for="lastName" class="hidden508">Last name</label>
-        <input id="lastName" ng-model="claimData.lastName" type="text" ng-required="true" placeholder="Last name">
-    </p>
-    <p>
-        <label for="companyName" class="hidden508">Company name (optional)</label>
-        <input id="companyName" ng-model="claimData.companyName" type="text" placeholder="Company name (optional)">
-    </p>
-    <p>
-        <label for="addr1" class="hidden508">Street address</label>
-        <input id="addr1" ng-model="claimData.streetAddress" type="text" ng-required="true" placeholder="Street address">
-    </p>
-    <p>
-        <label for="addr2" class="hidden508">Street address 2 (optional)</label>
-        <input id="addr2" ng-model="claimData.streetAddress2" type="text" placeholder="Street address 2 (optional)">
-    </p>
-    <p class="cityStateZip">
-                <span>
-                    <label for="city" class="hidden508">City</label>
-                    <input id="city" ng-model="claimData.city" type="text" ng-required="true" placeholder="City" class="inlineBlock">
-                </span>
-                <span class="statesDropDown">
-                    <label for="state" class="hidden508">State</label>
-                    <select id="state" ng-model="claimData.state" ng-required="true">
-                        <option value="" selected="selected">State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="PR">Puerto Rico</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                </span>
-                <span validate-fields-on-blur>
-                    <label for="zipcode" class="hidden508">Zipcode</label>
-                    <input id="zipcode"
-                           placeholder="Zipcode"
-                           type="text"
-                           ng-required="true"
-                           ng-model="claimData.zipcode"
-                           maxlength="5"
-                           ng-minlength="5"
-                           ng-maxlength="5"
-                           validation-msg="Please enter 5 digits for zipcode."
-                           ng-pattern="/^\d+$/">
-                </span>
-    </p>
-
-    <div class="personalization" ng-if="personalization.show">
-        <h2>Product details</h2>
-        <p class="gender" ng-if="personalization.indexOf('gender') !== -1">
-            <label for="male" class="inlineBlock">
-                <input type="radio"
-                       name="gender"
-                       ng-click="updateGender('male')"
-                       id="male"
-                       ng-model="gender"
-                       ng-required="true"
-                       value="male"> Male
-            </label>
-
-            <label for="female" class="inlineBlock">
-                <input type="radio"
-                       name="gender"
-                       ng-click="updateGender('female')"
-                       id="female"
-                       ng-model="gender"
-                       ng-required="true"
-                       value="female"> Female
-            </label>
-        </p>
+    <div id="menuBar">
+        <div id="chromeBar">
+            <div class="menuContainer fullMenu">
+                <div class="mobileItem pullWrapper visibleMobile">
+                    <button class="pull subNav" ng-click="toggleMobileMenu()">
+                        <i class="icon-hamburgerNav" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="logoWrapper mobileItem">
+                    <a ui-sref="authenticated.dashboard" class="logo" track-event="" event-category="" event-label="logo" href="/dashboard/">
+                        <img src="./img/rally_small_white.png" alt="Rally">
+                    </a>
+                </div>
+                <div id="searchContainer">
+                    <form action="/search" method="GET" id="searchRallyForm">
+                        <input type="text" name="q" id="mainsearchbox" placeholder="Search...">
+                        <i id="searchBtn" class="icon-search" aria-hidden="true"></i>
+                    </form>
+                </div>
+                <div id="headerActions">
+                    <button class="alertBtn hiddenMobile">
+                        <i class="icon-chat" aria-hidden="true"></i>
+                    </button>
+                    <button id="mainLogout" class="hiddenMobile" ui-sref="authenticated.logout" track-event="" event-category="" event-label="logout">
+                        Log Out
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="subMenuBar" class="drawer">
+            <div id="mobileSearch" class="search visibleMobile">
+                <form action="/search" method="GET" id="mobileSearchRallyForm" class="ng-scope ng-pristine ng-valid">
+                    <i class="icon-search" aria-hidden="true"></i>
+                    <input type="search" name="q" id="mobileMainsearchbox" placeholder="Search">
+                </form>
+            </div>
+            <ul class="menuContainer">
+                <li><a class="menuBtn" id="navHomeBtn"><span>Link 1</span></a></li>
+                <li><a class="menuBtn" id="navHomeBtn"><span>Link 2</span></a></li>
+                <li><a class="menuBtn" id="navHomeBtn"><span>Link 3</span></a></li>
+                <li><a class="menuBtn" id="navHomeBtn"><span>Link 4</span></a></li>
+            </ul>
+        </div>
     </div>
-    <div class="actionBtns clearfix">
-        <button class="robo-btn robo-btn-action"
-                ng-click="confirmClaimForm(reward)"
-                ng-disabled="fulfillmentForm.$invalid || incompleteShoeField()">Submit
-        </button>
-        <button class="robo-btn"
-                ng-click="cancelForm()"
-                confirm-if="fulfillmentForm.$dirty"
-                ng-disabled="fulfillmentForm.$pristine"
-                robo-confirm="Are you sure you want cancel?">Cancel
-        </button>
+    <div id="main_content">
+        <div id="mainBody">
+            <div class="maxContentWidth">
+                <h1 class="pageHeading">Page Heading</h1>
+
+                <p>Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <br/>
+                Link: <a href="http://www.werally.com">go to rally!</a>
+                <br/>
+                <div class="left">
+                    <button class="robo-btn">normal button</button>
+                    <button class="robo-btn robo-btn-action">action button</button>
+                    <button class="robo-btn robo-btn-lg">large button</button>
+                    <button class="robo-btn disabled">disabled button</button>
+                    <br/>
+                    <br/>
+                    <button class="robo-btn" ng-click="openModal()">click to open modal</button>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h1 class="pageHeading">Sample Table</h1>
+                    <table class="dataTable">
+                        <tbody>
+                            <tr class="headerRow">
+                                <th>Heading</th>
+                                <th ng-hide="responsiveMobile">Heading</th>
+                                <th>Heading</th>
+                                <th ng-hide="responsiveMobile">Heading</th>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="right">
+                <form name="fulfillmentForm" novalidate id="fulfillmentForm">
+                    <h1>Sample Form:</h1>
+                    <p>
+                        <label for="firstName" class="hidden508">First name</label>
+                        <input id="firstName" type="text" ng-required="true" placeholder="First name">
+                    </p>
+                    <p>
+                        <label for="lastName" class="hidden508">Last name</label>
+                        <input id="lastName" type="text" ng-required="true" placeholder="Last name">
+                    </p>
+                    <p>
+                        <label for="companyName" class="hidden508">Company name (optional)</label>
+                        <input id="companyName" type="text" placeholder="Company name (optional)">
+                    </p>
+                    <p>
+                        <label for="addr1" class="hidden508">Street address</label>
+                        <input id="addr1" type="text" ng-required="true" placeholder="Street address">
+                    </p>
+                    <p>
+                        <label for="addr2" class="hidden508">Street address 2 (optional)</label>
+                        <input id="addr2" type="text" placeholder="Street address 2 (optional)">
+                    </p>
+                    <p>
+                        <span>
+                            <label for="city" class="hidden508">City</label>
+                            <input id="city" type="text" ng-required="true" placeholder="City" class="inlineBlock">
+                        </span>
+                        <span>
+                            <label for="state" class="hidden508">State</label>
+                            <select id="state" ng-required="true">
+                                <option value="" selected="selected">State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                            </select>
+                        </span>
+                    </p>
+                    <p>
+                        <span validate-fields-on-blur>
+                            <label for="zipcode" class="hidden508">Zipcode</label>
+                            <input id="zipcode"
+                                   placeholder="Zipcode"
+                                   type="text"
+                                   ng-required="true"
+                                   ng-model="claimData.zipcode"
+                                   maxlength="5"
+                                   ng-minlength="5"
+                                   ng-maxlength="5"
+                                   validation-msg="Please enter 5 digits for zipcode."
+                                   ng-pattern="/^\d+$/">
+                        </span>
+                    </p>
+
+                    <div class="personalization" ng-if="personalization.show">
+                        <h2>Product details</h2>
+                        <p class="gender" ng-if="personalization.indexOf('gender') !== -1">
+                            <label for="male" class="inlineBlock">
+                                <input type="radio"
+                                       name="gender"
+                                       ng-click="updateGender('male')"
+                                       id="male"
+                                       ng-model="gender"
+                                       ng-required="true"
+                                       value="male"> Male
+                            </label>
+
+                            <label for="female" class="inlineBlock">
+                                <input type="radio"
+                                       name="gender"
+                                       ng-click="updateGender('female')"
+                                       id="female"
+                                       ng-model="gender"
+                                       ng-required="true"
+                                       value="female"> Female
+                            </label>
+                        </p>
+                    </div>
+                    <div class="actionBtns clearfix">
+                        <button class="robo-btn robo-btn-action"
+                                ng-click="confirmClaimForm(reward)"
+                                ng-disabled="fulfillmentForm.$invalid || incompleteShoeField()">Submit
+                        </button>
+                        <button class="robo-btn"
+                                ng-click="cancelForm()"
+                                confirm-if="fulfillmentForm.$dirty"
+                                ng-disabled="fulfillmentForm.$pristine"
+                                robo-confirm="Are you sure you want cancel?">Cancel
+                        </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
+    <div id="footer">
+        <div class="gutter">
+            <div class="left">
+                <p class="copyrights">Rally Health,&nbsp;Inc.&nbsp;&nbsp;©&nbsp;&nbsp;2014&nbsp;&nbsp;|&nbsp;&nbsp; All Rights Reserved</p>
+                <ul class="footerLinks">
+                    <li>
+                        <a class="footerLink" target="_blank" href="https://rally-support.force.com/customer/?Client=health_alliance&amp;Partner=health_alliance&amp;Affiliation=health_alliance">FAQ</a>
+                    </li>
+                    <li ng-repeat="link in footer.links" class="ng-scope">
+                    <a class="footerLink ng-binding" target="_blank" ng-href="/corporate/privacy">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="./img/rally_small_white.png">
+            </div>
+        </div>
+        </div>
 </body>
