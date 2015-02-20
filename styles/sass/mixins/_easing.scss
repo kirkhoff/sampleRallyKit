@@ -1,0 +1,11 @@
+// CSS 3 Easing
+// Source: Ceaser
+// Website: www.mattewlein.com/ceaser
+
+@mixin easeOutBack($property: all, $duration: 500ms) {
+    -webkit-transition: $property $duration cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+    @include transition($property $duration cubic-bezier(0.175, 0.885, 0.320, 1.275));
+
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+    @include transition-timing-function(cubic-bezier(0.175, 0.885, 0.320, 1.275));
+}

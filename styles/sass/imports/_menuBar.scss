@@ -1,0 +1,367 @@
+#menuBar {
+    display: block;
+    height: $menuBarHeight;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    .menuContainer {
+        @extend %clearfix;
+        @include box-sizing(border-box);
+        height: 100%;
+        margin: auto;
+        position: relative;
+        width: $defaultPageWidth;
+    }
+    .visibleMobile {
+        display: none;
+    }
+}
+#fluidNav {
+    display: none;
+}
+
+#chromeBar {
+    @include clearfix;
+    background-color: $menuBarColor;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    .fullMenu {
+        width: $defaultPageWidth;
+        .logoWrapper {
+            float: left;
+            width: 150px;
+        }
+        #searchContainer {
+            width: 439px;
+        }
+        #headerActions {
+            display: inline-block;
+        }
+    }
+    .logo {
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        img {
+            height: 30px;
+            line-height: 60px;
+            vertical-align: middle;
+        }
+    }
+    .alertBtn {
+        @extend %inlineBlock;
+        @include box-sizing(border-box);
+        background-color: transparent;
+        border-left: 1px solid black;
+        color: #999;
+        font-size: 20px;
+        height: 60px;
+        line-height: 60px;
+        outline: none;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 60px;
+        &.active,
+        &:hover {
+            background-color: $orange;
+            color: #ccc;
+        }
+        .alertCount,
+        .nothingNew {
+            @include box-sizing(border-box);
+            background-color: $secondaryColor;
+            border-radius: 10px;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            height: 18px;
+            line-height: 18px;
+            min-width: 18px;
+            padding: 0 5px;
+            position: absolute;
+            right: 8px;
+            text-align: center;
+            top: 10px;
+        }
+        .nothingNew {
+            display: none;
+        }
+    }
+    .gearButton {
+        @extend %inlineBlock;
+        @include box-sizing(border-box);
+        background-color: transparent;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        color: #999;
+        font-size: 20px;
+        height: 60px;
+        line-height: 60px;
+        outline: none;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 60px;
+        &.active,
+        &:hover {
+            background-color: $orange;
+            color: #ccc;
+        }
+    }
+}
+#userSettings {
+    display: inline-block;
+}
+#headerAvatar {
+    @include transition(opacity 1s);
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 8px 0 20px;
+    position:relative;
+    vertical-align: middle;
+    opacity: 0;
+    &.hasAvatar{
+        opacity: 1;
+    }
+    img {
+        @include roundAvatar(40px);
+        vertical-align: middle;
+    }
+    .coachBadge {
+        @extend %coach40;
+        top: 40px;
+    }
+}
+.limitedHeader #userAndCoins {
+    width: 100px;
+}
+#userAndCoins {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    width: 92px;
+    #user {
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-weight: bold;
+        height: 19px;
+        position: relative;
+        &:hover {
+            color: #ddd;
+        }
+        i {
+            color: #999;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+#mainLogout {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: $greyMedium;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    &.active,
+    &:hover {
+        background-color: $orange !important;
+        color: #ccc !important;
+    }
+}
+
+#headerUser {
+    @extend %ellipsis;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    max-width: 85px;
+}
+
+a#coins {
+    @include transition(opacity 1s);
+    color: $secondaryColor;
+    font-weight: bold;
+    text-align: left;
+    opacity: 0;
+    &.hasCoins {
+        opacity: 1;
+    }
+    &:hover {
+        color: tint($secondaryColor, 15%);
+    }
+    &:active,
+    &:focus {
+        border: none !important;
+        outline: none !important;
+    }
+    i {
+        font-size: 16px;
+        margin-left: -2px;
+        margin-right: 5px;
+    }
+    i,
+    span {
+        vertical-align: middle;
+    }
+}
+
+#headerActions {
+    float: right;
+    .hiddenMobile {
+        display: inline-block;
+        white-space: nowrap;
+        &.flyoutContainer {
+            display: block;
+        }
+    }
+}
+
+#subMenuBar {
+    background-color: #eee;
+    box-shadow: 1px 0 15px rgba(0, 0, 0, .3);
+    min-width: $defaultPageWidth;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    .menuBtn {
+        @include box-sizing(border-box);
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+        color: #4c4c4c;
+        display: inline-block;
+        cursor: pointer;
+        float: left;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 100%;
+        margin-right: -1px;
+        padding: 18px 20px;
+        vertical-align: middle;
+        &:hover,
+        &.active {
+            background-color: $orange;
+            color: white;
+        }
+        div,
+        i {
+            display: none;
+        }
+    }
+}
+
+#menuBar #searchContainer {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    padding-right: 0;
+    position: relative;
+    input {
+        @include box-sizing(border-box);
+        background-color: #4c4c4c;
+        border: 0;
+        border-radius: 0;
+        color: #ccc;
+        margin: 0;
+        padding-right: 30px;
+        width: 100%;
+        &:focus {
+            background-color: #eee;
+            color: #4c4c4c;
+        }
+    }
+    .icon-search {
+        color: #999;
+        font-size: 15px;
+        line-height: 60px;
+        position: absolute;
+        right: 10px;
+        top: 0;
+    }
+}
+
+#searchRallyForm {
+    position: relative;
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    :-ms-input-placeholder {
+        color: red!important;
+    }
+}
+
+#miniMenuBar {
+    margin: 20px 0 20px 170px;
+    position: absolute;
+    top: -40px;
+    .miniMenuBtn {
+        color: #999;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0 5px;
+        padding: 5px;
+        vertical-align: middle;
+        &:hover,
+        &.active {
+            color: white;
+        }
+    }
+}
+
+#userDropDownMenu {
+    li {
+        float: none;
+        a {
+            @extend %dropDownBtn;
+        }
+    }
+}
+
+// Set active states for menu buttons and mini nav buttons
+body {
+    &.dashboard #navHomeBtn,
+    &.activity #navActivityBtn,
+    &.challengesPage #navChallengesBtn,
+    &.communities #navCommunitiesBtn,
+    &.community #navCommunitiesBtn,
+    &.missions #navMissionsBtn,
+    &.goal #navGoalsBtn,
+    &.pageRewards #navRewardsBtn,
+    &.pageCMS #navCmsBtn,
+    &.pageExpertDashboard #navCoachingDashboardBtn,
+    &.pageMissions #navMissionsBtn,
+    &.pageCommunities #navCommunitiesBtn,
+    &.pageClientsList #navClientsBtn {
+        background-color: $orange;
+        color: white;
+        @media only screen and (min-width: 0) and (max-width: 640px) {
+            &.fluid {
+                background: #fff !important;
+                border-left: 4px solid $orange !important;
+                color: $orange !important;
+                i {
+                    display: none !important;
+                }
+                > div {
+                    margin-left: 0 !important;
+                    i {
+                        display: inline !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@import 'responsive/menuBar';

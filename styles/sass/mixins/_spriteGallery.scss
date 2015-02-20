@@ -1,0 +1,3 @@
+@mixin spriteGallery($x, $y) {
+    background: transparent url($gallerySprite) no-repeat (-$x) (-$y);
+}

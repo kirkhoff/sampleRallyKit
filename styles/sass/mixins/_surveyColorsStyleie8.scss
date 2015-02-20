@@ -1,0 +1,14 @@
+@mixin surveyColorsStyleIe8($color) {
+    .option {
+        .imgCont {
+            border: 15px solid tint($color, 35);
+        }
+        &:hover {
+            .imgCont {
+                border: 20px solid tint($color, 35);
+                margin: -5px 0 0 -5px;
+            }
+        }
+    }
+
+}

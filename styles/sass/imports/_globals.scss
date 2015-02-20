@@ -1,0 +1,241 @@
+$inputFocusBoxShadow: 0 0 0 3px rgba(255,255,255,.5);
+$inputBorder: 1px solid #dcdcdc;
+$inputFocusBorder: 1px solid $secondaryColor;
+body {
+    background: white;
+    color: $greyDark;
+    cursor: default;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+    line-height: 18px;
+}
+button {
+    -webkit-font-smoothing: antialiased;
+}
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
+    border: 0 none !important;
+    padding: 0 !important;
+}
+textarea {
+    @include transition(0.1s);
+    resize: none;
+    word-wrap: break-word;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+input[type="date"],
+textarea,
+.fakeInput {
+    @include transition(border, background-color 0.25s);
+    animation-iteration-count: infinite;
+    background: #fff;
+    border: $inputBorder;
+    border-radius: $globalBorderRadius;
+    box-shadow: none;
+    color: #666;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    margin: 0 10px 0 0;
+    outline: none;
+    padding: 7px;
+    resize: none;
+    &:focus:not(.disabled),
+    &.focus-dirty:focus:not(.disabled) {
+        border: $inputFocusBorder;
+    }
+    &.error,
+    &.error:focus {
+        border: 1px solid $errorColor;
+    }
+    &.disabled {
+        background: #fff;
+        color: #999;
+        pointer-events: none;
+    }
+    &:focus {
+        box-shadow: $inputFocusBoxShadow;
+    }
+    &.ng-invalid.has-visited {
+        border: 1px solid $errorColor;
+    }
+}
+.actionBtn,
+.normalBtn,
+button {
+    &[disabled="disabled"],
+    &[disabled="disabled"]:hover {
+        @include opacity(0.4);
+        pointer-events: none;
+    }
+}
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+    color: #ccc;
+}
+input[type="submit"] {
+//    @extend %actionBtn;
+}
+
+form {
+    h1 {
+        border-bottom: 1px solid $baseMutedLight;
+        color: $baseMutedDark;
+        display: block;
+        font-size: 24px;
+        margin: 10px;
+        padding-bottom: 10px;
+        .info {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+    label {
+        color: $baseMutedDark;
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        margin: 0 0 2px 0;
+        &.inline-block {
+            display: inline-block;
+        }
+    }
+    span.label {
+        color: $greyDark;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 5px 0 0;
+    }
+    fieldset.error .dk_container .dk_toggle {
+        border: 1px solid red;
+        box-shadow: 0 0 3px #600;
+    }
+    .hint {
+        font-size: 11px;
+        margin-left: 5px;
+    }
+    .submit {
+//        @extend %actionBtn;
+    }
+    #subject,
+    #to,
+    #body {
+        width: 85%;
+    }
+}
+
+a,
+.a {
+    color: $linkColor;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        color: shade($linkColor, 20%);
+        text-decoration: none;
+    }
+    &:visited {
+        color: $linkColor;
+        &:hover {
+            color: shade($linkColor, 20%);
+            text-decoration: none;
+        }
+    }
+}
+
+*[data-title] {
+    &:hover {
+        &:after {
+            @include arrow-down($baseMutedDark, 6px);
+            content: '';
+            display: block;
+            left: 50%;
+            margin-left: -6px;
+            position: absolute;
+            top: -8px;
+        }
+        &:before {
+            @include box-sizing(border-box);
+            background: $baseMutedDark;
+            border-radius: 3px;
+            bottom: 36px;
+            color: #fff;
+            content: attr(data-title);
+            display: block;
+            font-size: 11px;
+            left: 50%;
+            line-height: 11px;
+            margin-left: -65px;
+            padding: 4px;
+            position: absolute;
+            text-align: center;
+            width: 130px;
+        }
+    }
+
+    &.tooltipRight {
+        &:hover {
+            &:after {
+                @include arrow-left($baseMutedDark, 6px);
+                height: 0;
+                left: 100%;
+                margin-left: -6px;
+                margin-top: -6px;
+                top: 50%;
+                width: 0;
+            }
+            &:before {
+                height: 100%;
+                left: 100%;
+                margin-left: 6px;
+                overflow: visible;
+                top: 0;
+            }
+        }
+    }
+}
+
+table.dataTable {
+    color: $greyVeryDark;
+    .oddRow,
+    tbody tr:not(.headerRow):nth-child(odd) {
+        background-color: #f8f8f8;
+    }
+    .evenRow,
+    tbody tr:not(.headerRow):nth-child(even) {
+        background-color: #f1f1f1;
+    }
+    th {
+        font-size: 12px;
+        font-weight: normal;
+        padding: 10px;
+        text-align: left;
+    }
+    td {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px;
+        text-align: left;
+    }
+    td,
+    td * {
+        vertical-align: middle;
+    }
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+@import 'responsive/globals';

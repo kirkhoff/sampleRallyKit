@@ -1,0 +1,43 @@
+META-INF/
+
+# IntelliJ specific
+*.iml
+!intellijProject/*.iml
+.idea/
+!intellijProject/*.idea
+.idea_modules/
+final/*
+out/*
+
+# generic
+*.class
+*.log
+*.log.json
+*.swp
+*~
+\#*#
+.DS_Store
+classes/
+
+# other stuff
+boot/
+*.pyc
+*.ini
+
+# eclipse
+.project
+
+# jrebel
+rebel.xml
+*.swp
+META-INF/
+
+# compiled css
+.sass-cache/
+sassified/
+
+
+#atlassian plugin
+atlassian-ide-plugin.xml
+test/atlassian-ide-plugin.xml
+

@@ -1,0 +1,8 @@
+%link {
+    color: $linkColor;
+    &:hover {
+        color: darken($linkColor, 20%);
+        cursor: pointer;
+        text-decoration: none;
+    }
+}

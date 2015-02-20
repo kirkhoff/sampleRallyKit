@@ -1,0 +1,35 @@
+@mixin fluidObject($margin:10px) {
+    &,
+    > div + div {
+        overflow: hidden;
+        _overflow: visible;
+        zoom: 1;
+    }
+    > div:first-child {
+        float: left;
+        margin-right: $margin;
+        img {
+            display: block;
+        }
+        &.right {
+            float: right;
+            margin: 0 0 0 $margin;
+        }
+    }
+}
+@mixin fluidInputRow($margin:10px) {
+    &,
+    > label {
+        overflow: hidden;
+        _overflow: visible;
+        zoom: 1;
+    }
+    > input {
+        float: left;
+        margin-right: $margin;
+        &.right {
+            float: right;
+            margin: 0 0 0 $margin;
+        }
+    }
+}

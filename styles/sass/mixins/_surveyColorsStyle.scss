@@ -1,0 +1,30 @@
+@mixin surveyColorsStyle($color) {
+    $complementColor: tint($color, 35);
+    color: $color;
+    .answerGraphic {
+        background-color: $color;
+        color: $complementColor;
+        &:focus,
+        &:hover {
+            color: $complementColor;
+            box-shadow: 0 0 0 16px;
+        }
+    }
+    .answerText {
+        color: $color;
+    }
+    .selectedAnswer {
+        background-color: $color;
+        color: $complementColor;
+    }
+    .slider .choice {
+        &:hover,
+        &:focus {
+            border-color: $color;
+        }
+        &.active {
+            background: $color;
+            border-color: $color;
+        }
+    }
+}

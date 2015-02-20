@@ -1,0 +1,247 @@
+// Hero graphics and promo area
+// Hero Definition: A hero graphic often consists of image and text,
+// can be static or dynamic (e.g. a rotating list of images).(Source: wikipedia.com
+
+// #interiorHero is extended by .challenge inside _challenges.scss
+// Please test the challenges page if any modifications are made here
+// to make sure nothing is broken there.
+%interiorHero {
+    background-color: transparent;
+    margin-top: -($marginFromHeader + 1);
+    min-height: $defaultHeroHeight;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    .heroImgWrap {
+        height: 100%;
+        margin: 0 auto;
+        min-height: $defaultHeroHeight;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+    }
+    .heroGraphic {
+        height: auto;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+    }
+    .heroBody {
+        @include clearfix;
+        margin: 0 auto;
+        padding-bottom: 35px;
+        position: relative;
+        width: $defaultPageWidth;
+        z-index: 1;
+        .privateLabel {
+            color: $baseMutedMedium;
+            font-weight: bold;
+            font-size: 15px;
+            position: absolute;
+            top: 65px;
+            i {
+                font-size: 18px;
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+    .remainingDiscussionForm > .fakeInput {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+    .heroContent {
+        @extend %clearfix;
+        position: relative;
+        width: 655px;
+    }
+    .statusInput {
+        @include fluidContainer(75px, 620px);
+        .avatar {
+            top: 0;
+            img {
+                @include roundAvatar(75px);
+                margin: 0;
+            }
+            .coachBadge {
+                @extend %coach75;
+                top: 57px;
+            }
+        }
+        .postSomethingWithTooltip {
+            background-color: #fff;
+            background-color: rgba(255,255,255, .75);
+            border-radius: 0;
+            margin: 3px 0 15px 19px;
+            padding: 17px 15px;
+            &:after {
+                border-right-color: rgba(255,255,255, .75);
+            }
+        }
+        .fakeInput {
+            border-radius: 0!important;
+            padding: 6px;
+        }
+    }
+    &.hasSignup,
+    &.hasJoined,
+    &.hasContent {
+        .statusInput {
+            display: block;
+        }
+        .pageHeading {
+            line-height: 100%;
+            margin: 38px 0 26px;
+        }
+    }
+    &.hasSignup.goal,
+    &.hasJoined.goal,
+    &.hasContent.goal {
+        .pageHeading {
+            margin-top: 10px;
+        }
+    }
+    .infoStrip {
+        -moz-animation: fadeintext 2s;
+        -webkit-animation: fadeintext 2s;
+        background: transparent;
+        float: right;
+        height: 500px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 240px;
+        z-index: 0;
+        .gutter {
+            background-color: transparent;
+            box-sizing: border-box;
+            height: 100%;
+            width: 240px;
+        }
+
+    }
+    .summaryContent {
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.75);
+        min-height: 330px;
+        padding: 2.2em 1.6em;
+        .joinBtn {
+            box-shadow: none;
+            outline: none;
+            &.joined {
+                min-width: 57px;
+                padding-left: 25px;
+                position: relative;
+                text-align: left;
+                &:before {
+                    left: 0;
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+            &.followBtn {
+                min-width: 77px;
+            }
+        }
+        .summaryWrap {
+            display: inline-block;
+            height: 255px;
+            margin-bottom: .4em;
+            overflow: hidden;
+        }
+        .vertAlign,
+        .topAlign {
+            display: table;
+            height: 21em;
+            margin-bottom: 1em;
+            position: relative;
+            width: 100%;
+            .summaryText {
+                color: #333;
+                display: table-cell;
+                font-size: 1.55em;
+                font-weight: 300;
+                line-height: 1.4em;
+                vertical-align: middle;
+            }
+        }
+        .topAlign {
+            display: block;
+            .summaryText {
+                display: block;
+                vertical-align: top;
+            }
+        }
+    }
+    .summaryUpdates {
+        background: #fff;
+        height: 100%;
+    }
+    .updateContainer {
+        border-bottom: 1px solid #ccc;
+        color: #444;
+        margin: 0 1.6em;
+        padding: 1.875em 0;
+    }
+    .category {
+        font-size: 1.3em;
+        font-weight: 500;
+        line-height: 1.4em;
+    }
+    .data, {
+        font-size: 3.3em;
+        font-weight: 300;
+        line-height: 100%;
+    }
+    blockquote {
+        color: $linkColor;
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 1.3em;
+        margin: 0.6em 1em;
+        padding-left: 0;
+        position: relative;
+        width: 160px;
+        span {
+            font-weight: bold;
+        }
+        i {
+            font-size: 12px;
+        }
+        .icon-quoteStart {
+            margin-left: -17px;
+            position: absolute;
+            top: -3px;
+        }
+        .icon-quoteEnd {
+            bottom: -1px;
+            position: absolute;
+            right: -20px;
+        }
+    }
+    input.error,
+    textarea.error {
+        background: white;
+        background: rgba(255,255,255,.5);
+        color: $errorColor;
+        margin: 10px 0;
+        padding: 10px;
+    }
+}
+
+.recommendButton {
+    display: inline-block;
+    &:hover,
+    &:focus {
+        background-color: #f9f9f9;
+    }
+    .summaryContent & {
+        top: 2px;
+    }
+    i {
+        font-size: 16px;
+    }
+}

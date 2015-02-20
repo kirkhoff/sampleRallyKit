@@ -1,0 +1,9 @@
+/*
+  outputs background, width and height
+  $x and $y corresponds with the coordinates of the image in the sprite broken up by $gridSize
+*/
+@mixin sprite($x, $y, $url, $gridSize, $width, $height) {
+    background: transparent url($url) no-repeat (-$x*$gridSize) (-$y*$gridSize);
+    height: $height;
+    width: $width;
+}

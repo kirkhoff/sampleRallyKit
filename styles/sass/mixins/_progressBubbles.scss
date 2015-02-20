@@ -1,0 +1,26 @@
+@mixin bubble-wrap($borderColor: $bubbleGrey, $bubbleWidth: 29px, $lineLength: 70px) {
+    border-bottom: 2px solid $borderColor;
+    display: inline-block;
+    margin-right: $bubbleWidth + 2px;
+    min-width: 1px;
+    padding-left: $lineLength;
+    width: auto;
+}
+@mixin bubble($width: 29px, $bgColor: none, $color: $bubbleGrey, $border: 2px, $borderColor: $bubbleGrey,
+$fontSize: 16px, $fontWeight: 500) {
+    $totalWidth: $width + ($border * 2);
+    @include box-sizing(content-box);
+    @include roundAvatar($width: $width, $border: $border, $shadowSpread: 0);
+    @include transition(all 200ms !important);
+    @include transition-delay(500ms !important);
+    background: $bgColor;
+    border: $border solid $borderColor;
+    bottom: -($totalWidth/2);
+    color: $color;
+    display: inline-block;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    margin-right: -$totalWidth;
+    opacity: 1 !important;
+    position: relative;
+}

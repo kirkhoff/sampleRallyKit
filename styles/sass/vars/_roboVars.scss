@@ -1,0 +1,113 @@
+/* Base Colors */
+$baseColor: #939393;
+$secondaryColor: #49c57e;
+$linkColor: #00b2e2;
+$normalBtnColor: #f3f3f3;
+$actionBtnColor: $secondaryColor;
+$hoverColor: shade($linkColor, 30%);
+$activeColor: shade($linkColor, 15%);
+$menuBarColor: #333;
+$lightGreyBorder: #f2f2f2;
+
+/* Variations in base color */
+$baseDark: darken($baseColor, 20%);
+$baseMedium: tint(adjust-hue($baseColor, -10%), 15%);
+$baseLight: tint(adjust-hue($baseColor, -10%), 85%);
+$baseBright: tint($linkColor, 10%);
+$baseMutedDark: darken($baseDark, 7%);
+$baseMutedMedium: $baseMedium;
+$baseMutedLight: $baseLight;
+
+/* Variations in secondary color */
+$secondaryVeryLight: lighten($secondaryColor, 20%);
+$secondaryLight: lighten($secondaryColor, 10%);
+$secondaryMedium: darken($secondaryColor, 10%);
+$secondaryMutedMedium: desaturate($secondaryMedium, 10%);
+
+$notificationBackgroundColor: $secondaryMutedMedium;
+$warningYellow: #ffc600;
+
+/* Temporary colors */
+$rebrandOrange: #ee560c;
+
+/* Profile Colors */
+$goodColor: #36c8b5;
+$neutralColor: #ffc82b;
+$badColor: #ff7878;
+$borderLightColor: #f2f2f2;
+
+/* Survey Colors */
+$sFirstColor: #36c8b5;
+$sSecondColor: #f05b51;
+$sThirdColor: #00b2e2;
+$sFourthColor: #fe9646;
+$sDefaultColor: $sThirdColor;
+$sIconColor: #f36b34;
+
+/* Progress Bar Colors */
+$bubbleGrey: #eeeeee;
+$bubbleDarkGrey:  #4d4d4d;
+
+/* Modal colors */
+$modalLightGrey: #f9f9f9;
+$modalMediumGrey: #b2b2b2;
+$modalDarkGrey: #4d4d4d;
+
+
+
+/* Old colors */
+$greyVeryLight: #f4f4f4;
+$greyLight: #ccc;
+$greyMedium: #999;
+$greyDark: #666;
+$greyVeryDark: #4d4d4d;
+$orange: #f26c32;
+$red: #ca4117;
+$brightRed: #f13339;
+$green: #4bba35;
+
+/* Border Radius */
+$boxBorderRadius: 5px;
+$smBtnRadius: 15px;
+$globalBorderRadius: 2px;
+
+/* Gallery Grid Sprite */
+$gallerySprite: '/img/shared/galleryGridSprites.png';
+$gallerySpriteSize: 36px;
+
+/* Footer */
+$footerBkgd: #f9f9f9;
+$baseFooterHeight: 45px;
+
+/* Layout */
+$defaultPageWidth: 980px;
+$oneThirdWidth: 213px;
+$twoThirdWidth: 740px;
+$menuBarHeight: 111px;
+$defaultHeroHeight: 360px;
+
+/* Margins */
+$marginFromHeader: 35px;
+
+/* Responsive Device Breakpoints */
+$iPhoneWidth: 320px;
+$minPhoneWidth: 0px;
+$maxPhoneWidth: 960px;
+$minTabletWidth: 500px;
+$maxTabletWidth: 1024px;
+
+/* Updated Responsive Device Breakpoints */
+$max-phone-width: 767px;
+$max-tablet-width: 979px;
+
+/* Error Colors */
+$errorColor: #EF5B4B;
+
+//Bourbon flex-grid global settings
+$fg-column: 20px;     // Column Width
+$fg-gutter: 20px;     // Gutter Width
+$fg-max-columns: 24;  // Total Columns For Main Container
+
+/* content colors */
+$clementine: #ed8c41;
+

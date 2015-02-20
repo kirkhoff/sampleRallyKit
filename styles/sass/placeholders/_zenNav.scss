@@ -1,0 +1,64 @@
+%zenNav {
+    margin-bottom: 20px;
+    max-width: 213px;
+    .navHeader {
+        border-bottom: 1px solid $greyLight;
+        color: $greyLight;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 100%;
+        margin-top: 15px;
+        padding: 10px 0;
+        text-transform: uppercase;
+    }
+    .profRequestSent{
+        font-size: 11px;
+        position: absolute;
+        top: -21px;
+        width: 100%;
+    }
+    .navItem, .subNavItem {
+        @include box-sizing(border-box);
+        border-bottom: 1px solid $greyLight;
+        border-left: 4px solid white;
+        color: $greyDark;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 16px;
+        padding: 15px 10px;
+        vertical-align: middle;
+        width: 100%;
+        &:hover,
+        &:active,
+        &:focus,
+        a:hover,
+        a:active,
+        a:focus {
+            color: $orange;
+        }
+        &.active,
+        a.active {
+            border-left-color: $orange;
+            color: $orange;
+        }
+        i {
+            font-size: 16px;
+            line-height: 16px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .icon-plusCircleLine, .icon-minusCircleLine {
+            color: $greyLight;
+            cursor: default;
+            display: inline-block;
+            float: right;
+            font-size: 14px;
+            margin-right: 0;
+        }
+    }
+    .subNavItem {
+        color: $greyMedium;
+        padding-left: 39px;
+    }
+}

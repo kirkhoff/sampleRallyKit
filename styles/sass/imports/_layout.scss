@@ -1,0 +1,157 @@
+.horizontalList {
+    li {
+        display: inline-block;
+        float: left;
+    }
+    &:after {
+        @include clearfix;
+    }
+}
+
+.bottomBorder {
+//    border-bottom: 1px solid shade($baseMutedLight, 10%);
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    span.description {
+        color: $baseMutedMedium;
+        font-weight: normal;
+    }
+}
+
+.topBorder {
+    border-top: 1px solid $baseMutedLight;
+    margin-top: 18px;
+    padding-top: 18px;
+}
+
+.row {
+    clear: both;
+    display: block;
+    padding: 10px 0;
+    &.collapsed {
+        height: 0;
+        padding: 0 !important;
+    }
+}
+
+.textCenter,
+.center {
+    text-align: center;
+}
+
+%clearfix,
+.clearfix,
+.clear {
+    @include clearfix;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.link {
+    color: $linkColor;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.light {
+    font-weight: normal;
+}
+
+.middle {
+    vertical-align: middle !important;
+}
+
+.hide {
+    display: none !important;
+}
+.hidden508 {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.borderTopBtm {
+//    border-bottom: solid 1px shade($baseMutedLight, 10%);
+//    border-top: solid 1px shade($baseMutedLight, 10%);
+    margin: 0 0 10px;
+    padding: 10px 0;
+}
+
+.orange {
+    color: $orange;
+}
+
+.green {
+    color: $secondaryColor;
+}
+
+.lightBlue {
+    color: $baseBright;
+}
+
+.subHeading {
+    color: $baseMutedDark;
+    font-size: 18px;
+    font-weight: 200;
+    margin: 25px 0 0;
+    text-transform: uppercase;
+    &.bottomBorder {
+        margin-bottom: 0;
+    }
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.capitalizeFirstLetter:first-letter {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.centerAndFill {
+    text-align: center;
+    width: 100%;
+}
+
+.clickable,
+.pointer {
+    cursor: pointer;
+}
+
+.disableLink {
+    cursor: default;
+    pointer-events: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}

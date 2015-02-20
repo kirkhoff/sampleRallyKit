@@ -1,0 +1,423 @@
+@media screen and (max-width: $defaultPageWidth) {
+    #menuBar .menuContainer {
+        padding: 0 15px;
+        width: 100%;
+        &.fullMenu {
+            padding: 0;
+            width: $defaultPageWidth;
+        }
+    }
+    #subMenuBar .menuContainer {
+        padding: 0;
+    }
+}
+
+@media only screen
+and (min-width: 0px)
+and (max-width: 767px) {
+    #menuBar {
+        width: 100vw;
+    }
+    #headerAvatar {
+        margin: 0 8px 0 0;
+    }
+    #userAndCoins {
+        margin-right: 10px;
+    }
+    .visibleMobile {
+        display: block;
+    }
+    body.fluidHeader,
+    html {
+        margin: 0 !important;
+        overflow-x: hidden;
+        padding: 0 !important;
+    }
+
+    body.fluidHeader {
+        .fixedWidth {
+            width: auto !important;
+        }
+        #messageButton,
+        #headerAvatar,
+        #chatContainer,
+        .hiddenMobile {
+            display: none !important;
+        }
+        #footer {
+            display: none;
+            font-size: .8em;
+            height: auto;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            position: static;
+            right: 15%;
+            width: auto;
+            z-index: 1;
+            > div {
+                padding: 5px;
+            }
+            img {
+                margin: 12px 0 7px;
+            }
+            ul.footerLinks {
+                margin-bottom: 3px;
+                li {
+                    display: inline-block;
+                }
+            }
+            .gutter {
+                margin: auto;
+                padding: 3px 10px 30px;
+                width: auto;
+            }
+            .left,
+            .right {
+                float: none;
+                margin: 0;
+            }
+        }
+        #chromeBar,
+        .drawer,
+        #main_content {
+            @include transition(all cubic-bezier(0.360, 0.585, 0.335, 1.010) 350ms);
+            -webkit-backface-visibility: hidden;
+            position: fixed !important;
+            -webkit-transform-style: preserve-3d;
+        }
+        #main_content {
+            background: #fff;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+            margin: 0;
+            overflow: hidden;
+            padding-top: 45px !important;
+            position: relative !important;
+            z-index: 2;
+        }
+        #mainBody {
+            padding-bottom: 0;
+        }
+        #menuBar {
+            height: 0;
+            min-width: 0;
+            position: static;
+            #chromeBar {
+                @include transform(translateX(0%));
+                background: #333333;
+                font-size: 0;
+                left: 0;
+                line-height: 45px;
+                overflow: hidden;
+                top: 0;
+                white-space: nowrap;
+                z-index: 10;
+                .fullMenu {
+                    padding: 0 !important;
+                    position: static;
+                    width: auto !important;
+                    div {
+                        float: none !important;
+                        margin: auto !important;
+                    }
+                    .visibleMobile {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                    > div {
+                        display: none;
+                        margin: 0 !important;
+                        width: auto;
+                        &.mobileItem {
+                            display: inline-block;
+                            font-size: 20px;
+                            text-align: center;
+                            vertical-align: top;
+                            width: 15% !important;
+                            &.logoWrapper {
+                                display: inline-block;
+                                vertical-align: top;
+                                width: 70% !important;
+                                a {
+                                    display: block;
+                                    float: none;
+                                    height: auto;
+                                    line-height: 45px;
+                                }
+                                img {
+                                    height: auto;
+                                    margin: 0 auto;
+                                    max-width: 120px;
+                                    position: relative;
+                                    top: -2px;
+                                    vertical-align: middle;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            button {
+                                float: right;
+                            }
+                        }
+                    }
+                    button {
+                        @include transition(all 300ms);
+                        background: none;
+                        color: #999;
+                        float: left;
+                        height: 45px;
+                        line-height: 100%;
+                        margin: 0;
+                        outline: none;
+                        i {
+                            line-height: 48px;
+                        }
+                        &.pull {
+                            border: none;
+                            display: inline-block;
+                            position: relative;
+                            -webkit-tap-highlight-color: rgba(0,0,0,0);
+                            text-align: center;
+                            width: 50px;
+                            &:hover {
+                                background: transparent;
+                            }
+                            &.active {
+                                background: $orange;
+                                color: #ccc;
+                                &:hover {
+                                    background: $orange;
+                                }
+                            }
+                        }
+                    }
+                    .alertCount {
+                        color: #333;
+                        right: 6px;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+        #chromeBar .alertBtn .alertCount,
+        #chromeBar .alertBtn .nothingNew {
+            @include box-sizing(border-box);
+            background-color: $secondaryColor;
+            border-radius: 10px;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            height: 15px;
+            line-height: 15px;
+            min-width: 14px;
+            padding: 0 3px;
+            position: absolute;
+            text-align: center;
+            &.messages {
+                right: -3px;
+                top: -5px;
+            }
+        }
+        .nothingNew {
+            display: none;
+        }
+        #menuBar .drawer {
+            @include transform(translateX(-25%));
+            background: #eee;
+            bottom: 0;
+            font-size: 16px;
+            left: 0;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            &#subMenuBar {
+                box-shadow: none;
+                height: auto;
+                min-width: 0;
+                padding: 0;
+                position: static;
+                right: 15%;
+                visibility: hidden;
+                width: auto;
+                #footer,
+                .search {
+                    display: block;
+                }
+            }
+            .search {
+                background: #888;
+                height: 45px;
+                overflow: hidden;
+                position: relative;
+                form {
+                    background: white;
+                    border-radius: 3px;
+                    height: 24px;
+                    margin: 10px;
+                    overflow: hidden;
+                    position: relative;
+                }
+                i {
+                    left: 8px;
+                    position: absolute;
+                    top: 7px;
+                    vertical-align: middle;
+                }
+                input {
+                    border: 0;
+                    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                    font-size: .8em;
+                    height: 25px !important;
+                    padding: 0 5px;
+                    text-indent: 22px;
+                    width: 100%;
+                }
+            }
+        }
+        #messagesFlyout ul {
+            height: auto !important;
+            overflow: auto !important;
+        }
+        #subMenuBar ul.menuContainer {
+            height: auto !important;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            width: auto !important;
+            li {
+                border-bottom: 1px solid #CFCFCF;
+                display: block;
+                height: auto;
+                padding: 0px;
+                &.emptyThreadMessage {
+                    font-size: inherit;
+                    font-style: normal;
+                    font-weight: normal;
+                    padding: 10px;
+                    text-align: center;
+                }
+                a {
+                    background: white;
+                    border-left: 0;
+                    border-right: 0;
+                    color: #4c4c4c;
+                    display: block;
+                    float: none;
+                    font-size: 1em;
+                    font-weight: normal;
+                    overflow: hidden;
+                    padding: 9px;
+                    &#messageButton {
+                        display: block !important;
+                    }
+                    span {
+                        display: inline-block;
+                        line-height: 1.5em;
+                        vertical-align: top;
+                        &.nothingNew {
+                            display: none;
+                        }
+                    }
+                    > div {
+                        display: inline-block;
+                        height: 1.4em !important;
+                        margin: 0 18px 0 4px;
+                        overflow: visible;
+                        position: relative;
+                        text-align: center;
+                        vertical-align: baseline !important;
+                        width: 25px;
+                        #headerAvatar {
+                            display: inline-block !important;
+                            height: 1.5em;
+                            left: -1px;
+                            margin: 0;
+                            position: absolute;
+                            top: 2px;
+                            width: 1.5em;
+                            img {
+                                display: block;
+                                height: 100%;
+                                margin: 0;
+                                width: 100%;
+                            }
+                            .coachBadge {
+                                background: url(/img/sprites/badgesSprite.png) no-repeat -5px -1px;
+                                display: block;
+                                height: 9px;
+                                position: absolute;
+                                top: 16px;
+                                width: 16px;
+                            }
+                        }
+                    }
+                    i {
+                        display: inline;
+                        float: right;
+                        font-size: 1.2em;
+                        line-height: 1.2em;
+                    }
+                    i:first-child {
+                        float: none;
+                        font-size: 1.35em;
+                        line-height: 100%;
+                    }
+                    &.active {
+                        border-left: 4px solid $orange;
+                        div {
+                            margin-left: 0;
+                        }
+                        i {
+                            color: $orange;
+                            display: none;
+                            &:first-child {
+                                display: block;
+                            }
+                        }
+                    }
+                    &:hover {
+                        color: #4c4c4c;
+                    }
+                    &:active {
+                        color: $orange;
+                    }
+                    &.grey {
+                        background: transparent;
+                    }
+                }
+            }
+        }
+        &.opened {
+            overflow: hidden;
+            position: relative;
+            #subMenuBar {
+                visibility: visible !important;
+            }
+        }
+        &.leftSide {
+            #menuBar{
+                #subMenuBar.drawer {
+                    @include transform(translateX(-100%));
+                }
+            }
+            #main_content,
+            #menuBar #chromeBar {
+                @include transform(translateX(-85%));
+            }
+        }
+        &.rightSide {
+            #menuBar{
+                #subMenuBar.drawer {
+                    @include transform(translateX(0%));
+                }
+            }
+            #main_content,
+            #menuBar #chromeBar {
+                @include transform(translateX(85%));
+            }
+        }
+    }
+}

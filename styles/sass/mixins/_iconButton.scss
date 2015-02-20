@@ -1,0 +1,5 @@
+@mixin iconButton($backgroundColor: $linkColor, $color: #FFF) {
+    background-color: $backgroundColor;
+    border: 1px solid darken($backgroundColor, 8%);
+    color: $color;
+}

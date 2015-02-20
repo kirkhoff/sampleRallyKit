@@ -1,0 +1,6 @@
+@mixin print-color-adjust($value) {
+    -webkit-print-color-adjust: $value;
+    -moz-print-color-adjust: $value;
+    -ms-print-color-adjust: $value;
+    print-color-adjust: $value;
+}

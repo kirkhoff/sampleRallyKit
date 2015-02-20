@@ -1,0 +1,8 @@
+@mixin userSelect($enable: none) {
+    -webkit-touch-callout: $enable;
+    -webkit-user-select: $enable;
+    -khtml-user-select: $enable;
+    -moz-user-select: moz-$enable;
+    -ms-user-select: $enable;
+    user-select: $enable;
+}

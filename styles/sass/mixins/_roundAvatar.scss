@@ -1,0 +1,7 @@
+@mixin roundAvatar($width, $shadowSpread:1 , $border: 0) {
+    border-radius: ($width + $border*2)/2;
+    box-shadow: 0 0 0 $shadowSpread rgba(0,0,0,.1);
+    height: $width;
+    position: relative;
+    width: $width;
+}

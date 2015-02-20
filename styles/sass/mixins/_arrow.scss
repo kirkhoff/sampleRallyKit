@@ -1,0 +1,57 @@
+@mixin arrow-up($color: #ccc, $width: 5px, $height: $width) {
+    border-bottom: $height solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    height: 0;
+    width: 0;
+}
+
+@mixin arrow-down($color: #ccc, $width: 5px, $height: $width) {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $height solid $color;
+    height: 0;
+    width: 0;
+}
+
+@mixin arrow-left($color: #ccc, $height: 5px, $width: $height) {
+    border-bottom: $height solid transparent;
+    border-right: $width solid $color;
+    border-top: $height solid transparent;
+    height: 0;
+    width: 0;
+}
+
+@mixin arrow-right($color: #ccc, $height: 5px, $width: $height) {
+    border-bottom: $height solid transparent;
+    border-left: $width solid $color;
+    border-top: $height solid transparent;
+    height: 0;
+    width: 0;
+}
+
+@mixin arrow-rounded($deg: 135deg, $color: #ccc, $height: 5px, $width: $height, $border-radius: 2px, $border-width: 1px, $border-color: shade($color, 10%)) {
+    @include background(linear-gradient(-45deg, $color 50%, transparent 50%));
+    @include transform(rotate($deg));
+    border: solid $border-color;
+    border-radius: $border-radius;
+    border-width: 0 $border-width $border-width 0;
+    height: $height;
+    width: $width;
+}
+
+@mixin arrow-top-rounded($color: #ccc, $height: 5px, $width: $height, $border-radius: 2px, $border-width: 1px, $border-color: shade($color, 10%)) {
+    @include arrow-rounded(-135deg, $color, $height, $width, $border-radius, $border-width, $border-color);
+}
+
+@mixin arrow-right-rounded($color: #ccc, $height: 5px, $width: $height, $border-radius: 2px, $border-width: 1px, $border-color: shade($color, 10%)) {
+    @include arrow-rounded(-45deg, $color, $height, $width, $border-radius, $border-width, $border-color);
+}
+
+@mixin arrow-bottom-rounded($color: #ccc, $height: 5px, $width: $height, $border-radius: 2px, $border-width: 1px, $border-color: shade($color, 10%)) {
+    @include arrow-rounded(45deg, $color, $height, $width, $border-radius, $border-width, $border-color);
+}
+
+@mixin arrow-left-rounded($color: #ccc, $height: 5px, $width: $height, $border-radius: 2px, $border-width: 1px, $border-color: shade($color, 10%)) {
+    @include arrow-rounded(135deg, $color, $height, $width, $border-radius, $border-width, $border-color);
+}

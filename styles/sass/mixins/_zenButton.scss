@@ -1,0 +1,206 @@
+@mixin zenButton($backgroundColor: $linkColor, $padding:8px 25px, $width:auto, $height:auto) {
+    $color: white;
+    $luminance: lightness($backgroundColor) / 100%;
+    @if $luminance > .75 {
+        $color: shade($backgroundColor, lightness($backgroundColor)/1.75);
+    }
+    background-color: $backgroundColor;
+    border: 1px solid shade($backgroundColor, 10%);
+    border-radius: $globalBorderRadius;
+    box-shadow: none;
+    color: $color;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    font-smoothing: antialiased;
+    font-weight: bold;
+    height: $height;
+    line-height: 100%;
+    margin: 0;
+    outline: none;
+    padding: $padding;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: $width;
+    &:active {
+        background-color: darken($backgroundColor, 7%);
+        border-color: shade($backgroundColor, 10%);
+        color: $color;
+    }
+    &:hover,
+    &:focus {
+        background-color: lighten($backgroundColor, 7%);
+        border-color: shade($backgroundColor, 10%);
+        color: $color;
+    }
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(0,0,0,.1);
+    }
+    &:visited,
+    &:visited:hover {
+        color: $color;
+    }
+    &.disabled {
+        @if $luminance > .75 {
+            background-color: $greyLight;
+            border-color: shade($greyLight, 10%);
+            color: #eee!important;
+        }
+        @else {
+            @include opacity(0.4);
+            background-color: $backgroundColor;
+            border-color: shade($backgroundColor, 10%);
+            color: tint($backgroundColor, 50%)!important;
+        }
+        cursor: default;
+        pointer-events: none;
+    }
+    &.fullWidth {
+        width: 100%;
+    }
+    > i {
+        line-height: 0;
+        vertical-align: middle;
+    }
+    @media only screen and (max-device-width: $iPhoneWidth) {
+        font-family: 'Helvetica';
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+%normalBtn {
+    @include zenButton(#eee);
+}
+
+%normalBtnLg {
+    @include zenButton(#eee, 12px 35px);
+    font-size: 14px;
+}
+
+%actionBtn {
+    @include zenButton($secondaryColor);
+}
+
+%actionBtnLg {
+    @include zenButton($secondaryColor, 12px 35px);
+    font-size: 14px;
+}
+
+%linkBtn {
+    @include zenButton($linkColor);
+}
+
+%disabledBtn {
+    @include zenButton($greyLight);
+    color: #eee!important;
+    cursor: default;
+    pointer-events: none;
+}
+
+%blockBtn {
+    @extend %normalBtn;
+    @include zenButton(#eee, 8px 0);
+    display: block;
+}
+
+%joinBtn {
+    @include zenButton($secondaryColor);
+    &.joined,
+    &.teamJoined {
+        background: transparent;
+        border-color: transparent;
+        color: $greyVeryDark;
+        cursor: default;
+        padding-left: 22px;
+        &:before {
+            @extend %rallyGlyphs;
+            color: $secondaryColor;
+            content: '\2714'; /* checkmark icon */
+            font-size: 18px;
+            left: -5px;
+            line-height: 0;
+            position: relative;
+            top: 3px;
+        }
+        &.canUnjoin:hover,
+        &.canUnjoin:hover:before {
+            color: $red;
+            content: '\2297'; /* cancel icon */
+            cursor: pointer;
+        }
+    }
+    @media (max-width: $max-phone-width) {
+        &.canUnjoin,
+        &.canUnjoin:before {
+            color: $red;
+            content: '\2297'; /* cancel icon */
+            cursor: pointer;
+        }
+    }
+}
+
+%dropDownBtn {
+    @extend %normalBtn;
+    border-radius: 0;
+    border-width: 0 0 1px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    text-transform: capitalize;
+    &:hover {
+        @extend %dropDownBtnHover;
+    }
+}
+
+%dropDownBtnHover {
+    background-color: white;
+    color: $orange!important;
+    position: relative;
+}
+
+%dropDownBtnActive {
+    @extend %dropDownBtnHover;
+    &:before {
+        background-color: $orange;
+        content: '';
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 4px;
+    }
+}
+
+//%recommendButton {
+//    @include zenButton($baseMutedMedium, 7px 6px 6px);
+//    font-weight: normal;
+//    margin-left: 4px;
+//    position: relative;
+//    text-transform: none;
+//
+//    &::-moz-focus-inner {
+//        border: 0;
+//        padding: 0;
+//    }
+//}
+
+//%removeBtn {
+//    @include zenButton($baseMutedMedium, 0, 20px, 20px);
+//    border-radius: 10px;
+//    > i {
+//        font-size: 8px;
+//        line-height: 20px;
+//    }
+//    &:hover {
+//        background-color: $red;
+//        border-color: shade($red, 10%);
+//        color: white;
+//    }
+//}

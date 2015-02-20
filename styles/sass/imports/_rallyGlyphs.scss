@@ -1,0 +1,803 @@
+@font-face {
+    font-family: 'RallyGlyphs';
+    src:url('../fonts/RallyGlyphs.eot');
+    src:url('../fonts/RallyGlyphs.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RallyGlyphs.svg#RallyGlyphs') format('svg'),
+        url('../fonts/RallyGlyphs.woff') format('woff'),
+        url('../fonts/RallyGlyphs.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    text-transform: none!important;
+}
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-cart, .icon-promo, .icon-noSmokingBlackCircle, .icon-surveyBlackCircle, .icon-screening, .icon-missions, .icon-maternity, .icon-healthTarget, .icon-healthCostEstimate, .icon-fitnessReimbursement, .icon-diseaseManagement, .icon-coaching, .icon-choiceConfiguration, .icon-challengesBlackCircle, .icon-plate, .icon-feelSmile, .icon-preventiveCare, .icon-deviceEnabled, .icon-campaign, .icon-books, .icon-rocket, .icon-reminderBell, .icon-healthSurvey, .icon-thinXCircle, .icon-brokenLink, .icon-workPain, .icon-sad, .icon-muscle, .icon-jump, .icon-emotionsWork, .icon-emotionsActivities, .icon-emotionalHealth, .icon-copy, .icon-noSmoking, .icon-thinX, .icon-printer, .icon-openChevron, .icon-attention, .icon-drop, .icon-waistSize, .icon-ivDrip, .icon-nutrition, .icon-notSoGreat, .icon-nonSmoker, .icon-poorSleeper, .icon-pathUnengaged, .icon-missionUnengaged, .icon-challengeUnengaged, .icon-can, .icon-canNot, .icon-burger, .icon-coachUnengaged, .icon-dash, .icon-surveys, .icon-help, .icon-notepad, .icon-heartbeat, .icon-settings, .icon-preview, .icon-prettyGreat, .icon-prettyGood, .icon-prettyBad, .icon-notSoGood, .icon-veryGood, .icon-woman, .icon-lowExercise, .icon-lessThan1Month, .icon-moreThan1Month, .icon-today, .icon-intervention, .icon-highStress, .icon-challenge, .icon-highCholesterol, .icon-highBloodPressure, .icon-goodSleeper, .icon-lowCholesterol, .icon-lowBloodPressure, .icon-prevention, .icon-segments, .icon-boxedPlus, .icon-refresh, .icon-outOfBed, .icon-house, .icon-work, .icon-tv, .icon-shirt, .icon-lunch, .icon-fingerReminder, .icon-coffee, .icon-clockPm, .icon-clockAm, .icon-brushTeeth, .icon-private, .icon-ready, .icon-paths, .icon-present, .icon-trophy, .icon-stretchingGuy, .icon-coins, .icon-downArrow, .icon-upArrow, .icon-achievementRibbon, .icon-zpCoaches, .icon-logout, .icon-hamburgerNav, .icon-shared, .icon-happy, .icon-frown, .icon-soso, .icon-yes, .icon-no, .icon-allDone, .icon-print, .icon-bmi, .icon-alcohol, .icon-smoke, .icon-statusOffline, .icon-statusBusy, .icon-statusOnline, .icon-gender, .icon-birthday, .icon-water, .icon-swim, .icon-stairs, .icon-situp, .icon-salad, .icon-pushUp, .icon-powerWalk, .icon-leafy, .icon-grains, .icon-fruit, .icon-fish, .icon-dance, .icon-cook, .icon-broccoli, .icon-bike, .icon-dot, .icon-runningMan, .icon-apple, .icon-challenges, .icon-inviteClients, .icon-quoteEnd, .icon-quoteStart, .icon-forward, .icon-cancel, .icon-male, .icon-female, .icon-envelope, .icon-profilestory, .icon-teamShirt, .icon-profileimage, .icon-trash, .icon-pencil, .icon-deactivate, .icon-briefcase, .icon-groups, .icon-clients, .icon-liftingWeights, .icon-singleComment, .icon-weight, .icon-height, .icon-encouragement, .icon-dumbell, .icon-dashboard, .icon-customers, .icon-flag, .icon-groupChat, .icon-sync, .icon-comments, .icon-plusCircleLine, .icon-minusCircleLine, .icon-captainsJersey, .icon-handShake, .icon-unarchive, .icon-reply, .icon-archive, .icon-recommendations, .icon-warning, .icon-users, .icon-usb, .icon-twitter, .icon-tube, .icon-timed, .icon-thumbsUp, .icon-thumbsDown, .icon-tags, .icon-switch, .icon-star, .icon-send, .icon-search, .icon-profile, .icon-plus, .icon-pictures, .icon-personalize, .icon-people, .icon-objective, .icon-minus, .icon-man, .icon-locked, .icon-location, .icon-link, .icon-jumpRope, .icon-invite, .icon-infoCircle, .icon-info, .icon-infinite, .icon-hraHeart, .icon-home, .icon-heartPlus, .icon-heart, .icon-healthPrizes, .icon-healthInfo, .icon-missions, .icon-gift, .icon-gear, .icon-follow, .icon-fitnessBar, .icon-file, .icon-facebook, .icon-explore, .icon-experts, .icon-edit, .icon-computer, .icon-comment, .icon-checkmarkCircleSolid, .icon-checkmarkCircleLine, .icon-checkmark, .icon-chat, .icon-chart, .icon-cancelCircleSolid, .icon-camera, .icon-calendar, .icon-bookmarks, .icon-bookmark, .icon-bicycle, .icon-award, .icon-arrowUpLine, .icon-arrowRightSolid, .icon-arrowRightLine, .icon-arrowLeftLine, .icon-arrowDownSolid, .icon-arrowDownLine, .icon-addressBook, .icon-addContact, .icon-activity, .icon-person, .icon-continuous, .icon-arrowLeftSolid, .icon-arrowUpSolid, .icon-giftCards, .icon-coin, .icon-rewards, .icon-distance, .icon-walk, .icon-locationAlt, .icon-lockedAlt, .icon-trophyAlt, .icon-chartAlt {
+    font-family: 'RallyGlyphs';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-cart:before {
+    content: "\e000";
+}
+.icon-promo:before {
+    content: "\e001";
+}
+.icon-noSmokingBlackCircle:before {
+    content: "\e0a7";
+}
+.icon-surveyBlackCircle:before {
+    content: "\e0ca";
+}
+.icon-screening:before {
+    content: "\e0cb";
+}
+.icon-missions:before {
+    content: "\e0cc";
+}
+.icon-maternity:before {
+    content: "\e0cd";
+}
+.icon-healthTarget:before {
+    content: "\e0ce";
+}
+.icon-healthCostEstimate:before {
+    content: "\e0cf";
+}
+.icon-fitnessReimbursement:before {
+    content: "\e0d0";
+}
+.icon-diseaseManagement:before {
+    content: "\e0d1";
+}
+.icon-coaching:before {
+    content: "\e0d2";
+}
+.icon-choiceConfiguration:before {
+    content: "\e0d3";
+}
+.icon-challengesBlackCircle:before {
+    content: "\e0d4";
+}
+.icon-plate:before {
+    content: "\e013";
+}
+.icon-feelSmile:before {
+    content: "\e006";
+}
+.icon-preventiveCare:before {
+    content: "\e002";
+}
+.icon-deviceEnabled:before {
+    content: "\e0c8";
+}
+.icon-campaign:before {
+    content: "\e0c7";
+}
+.icon-books:before {
+    content: "\e0c6";
+}
+.icon-rocket:before {
+    content: "\e003";
+}
+.icon-reminderBell:before {
+    content: "\e0c5";
+}
+.icon-healthSurvey:before {
+    content: "\e0c4";
+}
+.icon-thinXCircle:before {
+    content: "\e0c3";
+}
+.icon-brokenLink:before {
+    content: "\e0c2";
+}
+.icon-workPain:before {
+    content: "\e0c1";
+}
+.icon-sad:before {
+    content: "\e0c0";
+}
+.icon-muscle:before {
+    content: "\e0bf";
+}
+.icon-jump:before {
+    content: "\e0be";
+}
+.icon-emotionsWork:before {
+    content: "\e0bd";
+}
+.icon-emotionsActivities:before {
+    content: "\e0bc";
+}
+.icon-emotionalHealth:before {
+    content: "\e0bb";
+}
+.icon-copy:before {
+    content: "\e078";
+}
+.icon-noSmoking:before {
+    content: "\24";
+}
+.icon-thinX:before {
+    content: "\e0ba";
+}
+.icon-printer:before {
+    content: "\e0b9";
+}
+.icon-openChevron:before {
+    content: "\e0b8";
+}
+.icon-attention:before {
+    content: "\e00c";
+}
+.icon-drop:before {
+    content: "\e0b7";
+}
+.icon-waistSize:before {
+    content: "\e0a8";
+}
+.icon-ivDrip:before {
+    content: "\e06c";
+}
+.icon-nutrition:before {
+    content: "\e01e";
+}
+.icon-notSoGreat:before {
+    content: "\e0b1";
+}
+.icon-nonSmoker:before {
+    content: "\e0b2";
+}
+.icon-poorSleeper:before {
+    content: "\e0b3";
+}
+.icon-pathUnengaged:before {
+    content: "\e0b4";
+}
+.icon-missionUnengaged:before {
+    content: "\e0b5";
+}
+.icon-challengeUnengaged:before {
+    content: "\e0b6";
+}
+.icon-can:before {
+    content: "\e0af";
+}
+.icon-canNot:before {
+    content: "\e0b0";
+}
+.icon-burger:before {
+    content: "\e09d";
+}
+.icon-coachUnengaged:before {
+    content: "\e08f";
+}
+.icon-dash:before {
+    content: "\e0ac";
+}
+.icon-surveys:before {
+    content: "\e0ad";
+}
+.icon-help:before {
+    content: "\e0ae";
+}
+.icon-notepad:before {
+    content: "\e0aa";
+}
+.icon-heartbeat:before {
+    content: "\e0ab";
+}
+.icon-settings:before {
+    content: "\e0a3";
+}
+.icon-preview:before {
+    content: "\e0a4";
+}
+.icon-prettyGreat:before {
+    content: "\e0a5";
+}
+.icon-prettyGood:before {
+    content: "\e004";
+}
+.icon-prettyBad:before {
+    content: "\e005";
+}
+.icon-notSoGood:before {
+    content: "\e0a9";
+}
+.icon-veryGood:before {
+    content: "\e007";
+}
+.icon-woman:before {
+    content: "\e0a1";
+}
+.icon-lowExercise:before {
+    content: "\e008";
+}
+.icon-lessThan1Month:before {
+    content: "\e09f";
+}
+.icon-moreThan1Month:before {
+    content: "\e099";
+}
+.icon-today:before {
+    content: "\e09a";
+}
+.icon-intervention:before {
+    content: "\e09b";
+}
+.icon-highStress:before {
+    content: "\e09c";
+}
+.icon-challenge:before {
+    content: "\e09e";
+}
+.icon-highCholesterol:before {
+    content: "\e097";
+}
+.icon-highBloodPressure:before {
+    content: "\e096";
+}
+.icon-goodSleeper:before {
+    content: "\e009";
+}
+.icon-lowCholesterol:before {
+    content: "\e094";
+}
+.icon-lowBloodPressure:before {
+    content: "\e093";
+}
+.icon-prevention:before {
+    content: "\e092";
+}
+.icon-segments:before {
+    content: "\e091";
+}
+.icon-boxedPlus:before {
+    content: "\e090";
+}
+.icon-refresh:before {
+    content: "\e08e";
+}
+.icon-outOfBed:before {
+    content: "\e00a";
+}
+.icon-house:before {
+    content: "\e00b";
+}
+.icon-work:before {
+    content: "\e08b";
+}
+.icon-tv:before {
+    content: "\e033";
+}
+.icon-shirt:before {
+    content: "\e036";
+}
+.icon-lunch:before {
+    content: "\e052";
+}
+.icon-fingerReminder:before {
+    content: "\e054";
+}
+.icon-coffee:before {
+    content: "\e056";
+}
+.icon-clockPm:before {
+    content: "\e059";
+}
+.icon-clockAm:before {
+    content: "\e05a";
+}
+.icon-brushTeeth:before {
+    content: "\e05b";
+}
+.icon-private:before {
+    content: "\e082";
+}
+.icon-ready:before {
+    content: "\e081";
+}
+.icon-paths:before {
+    content: "\e080";
+}
+.icon-present:before {
+    content: "\e07f";
+}
+.icon-trophy:before {
+    content: "\e07e";
+}
+.icon-stretchingGuy:before {
+    content: "\e07d";
+}
+.icon-coins:before {
+    content: "\e07c";
+}
+.icon-downArrow:before {
+    content: "\e07b";
+}
+.icon-upArrow:before {
+    content: "\e07a";
+}
+.icon-achievementRibbon:before {
+    content: "\e079";
+}
+.icon-zpCoaches:before {
+    content: "\e077";
+}
+.icon-logout:before {
+    content: "\e076";
+}
+.icon-hamburgerNav:before {
+    content: "\e075";
+}
+.icon-shared:before {
+    content: "\e065";
+}
+.icon-happy:before {
+    content: "\e05c";
+}
+.icon-frown:before {
+    content: "\e05d";
+}
+.icon-soso:before {
+    content: "\e069";
+}
+.icon-yes:before {
+    content: "\e074";
+}
+.icon-no:before {
+    content: "\e073";
+}
+.icon-allDone:before {
+    content: "\e05e";
+}
+.icon-print:before {
+    content: "\e071";
+}
+.icon-bmi:before {
+    content: "\e06f";
+}
+.icon-alcohol:before {
+    content: "\e06e";
+}
+.icon-smoke:before {
+    content: "\e06d";
+}
+.icon-statusOffline:before {
+    content: "\e068";
+}
+.icon-statusBusy:before {
+    content: "\e067";
+}
+.icon-statusOnline:before {
+    content: "\e066";
+}
+.icon-gender:before {
+    content: "\e057";
+}
+.icon-birthday:before {
+    content: "\e042";
+}
+.icon-water:before {
+    content: "\e00d";
+}
+.icon-swim:before {
+    content: "\e00e";
+}
+.icon-stairs:before {
+    content: "\e05f";
+}
+.icon-situp:before {
+    content: "\e060";
+}
+.icon-salad:before {
+    content: "\e00f";
+}
+.icon-pushUp:before {
+    content: "\e061";
+}
+.icon-powerWalk:before {
+    content: "\e055";
+}
+.icon-leafy:before {
+    content: "\e010";
+}
+.icon-grains:before {
+    content: "\e011";
+}
+.icon-fruit:before {
+    content: "\e063";
+}
+.icon-fish:before {
+    content: "\e064";
+}
+.icon-dance:before {
+    content: "\e012";
+}
+.icon-cook:before {
+    content: "\e015";
+}
+.icon-broccoli:before {
+    content: "\e016";
+}
+.icon-bike:before {
+    content: "\e058";
+}
+.icon-dot:before {
+    content: "\b7";
+}
+.icon-runningMan:before {
+    content: "\e053";
+}
+.icon-apple:before {
+    content: "\e017";
+}
+.icon-challenges:before {
+    content: "\e051";
+}
+.icon-inviteClients:before {
+    content: "\e04c";
+}
+.icon-quoteEnd:before {
+    content: "\e02a";
+}
+.icon-quoteStart:before {
+    content: "\e029";
+}
+.icon-forward:before {
+    content: "\e024";
+}
+.icon-cancel:before {
+    content: "\78";
+}
+.icon-male:before {
+    content: "\e04b";
+}
+.icon-female:before {
+    content: "\e04a";
+}
+.icon-envelope:before {
+    content: "\2709";
+}
+.icon-profilestory:before {
+    content: "\e0c9";
+}
+.icon-teamShirt:before {
+    content: "\e018";
+}
+.icon-profileimage:before {
+    content: "\e019";
+}
+.icon-trash:before {
+    content: "\e049";
+}
+.icon-pencil:before {
+    content: "\e047";
+}
+.icon-deactivate:before {
+    content: "\e048";
+}
+.icon-briefcase:before {
+    content: "\e046";
+}
+.icon-groups:before {
+    content: "\e045";
+}
+.icon-clients:before {
+    content: "\e03c";
+}
+.icon-liftingWeights:before {
+    content: "\e01b";
+}
+.icon-singleComment:before {
+    content: "\e03d";
+}
+.icon-weight:before {
+    content: "\e039";
+}
+.icon-height:before {
+    content: "\e038";
+}
+.icon-encouragement:before {
+    content: "\e037";
+}
+.icon-dumbell:before {
+    content: "\e034";
+}
+.icon-dashboard:before {
+    content: "\e032";
+}
+.icon-customers:before {
+    content: "\e031";
+}
+.icon-flag:before {
+    content: "\e020";
+}
+.icon-groupChat:before {
+    content: "\e01a";
+}
+.icon-sync:before {
+    content: "\e01f";
+}
+.icon-comments:before {
+    content: "\e01c";
+}
+.icon-plusCircleLine:before {
+    content: "\e01d";
+}
+.icon-minusCircleLine:before {
+    content: "\e021";
+}
+.icon-captainsJersey:before {
+    content: "\e022";
+}
+.icon-handShake:before {
+    content: "\e023";
+}
+.icon-unarchive:before {
+    content: "\e025";
+}
+.icon-reply:before {
+    content: "\e026";
+}
+.icon-archive:before {
+    content: "\e027";
+}
+.icon-recommendations:before {
+    content: "\e028";
+}
+.icon-warning:before {
+    content: "\26a0";
+}
+.icon-users:before {
+    content: "\e02b";
+}
+.icon-usb:before {
+    content: "\e02c";
+}
+.icon-twitter:before {
+    content: "\e02d";
+}
+.icon-tube:before {
+    content: "\e02e";
+}
+.icon-timed:before {
+    content: "\e02f";
+}
+.icon-thumbsUp:before {
+    content: "\263a";
+}
+.icon-thumbsDown:before {
+    content: "\2639";
+}
+.icon-tags:before {
+    content: "\e030";
+}
+.icon-switch:before {
+    content: "\21c6";
+}
+.icon-star:before {
+    content: "\2605";
+}
+.icon-send:before {
+    content: "\2708";
+}
+.icon-search:before {
+    content: "\e035";
+}
+.icon-profile:before {
+    content: "\e03a";
+}
+.icon-plus:before {
+    content: "\271a";
+}
+.icon-pictures:before {
+    content: "\e03b";
+}
+.icon-personalize:before {
+    content: "\e03e";
+}
+.icon-people:before {
+    content: "\e03f";
+}
+.icon-objective:before {
+    content: "\25ce";
+}
+.icon-minus:before {
+    content: "\2d";
+}
+.icon-man:before {
+    content: "\21";
+}
+.icon-locked:before {
+    content: "\22";
+}
+.icon-location:before {
+    content: "\23";
+}
+.icon-link:before {
+    content: "\25";
+}
+.icon-jumpRope:before {
+    content: "\26";
+}
+.icon-invite:before {
+    content: "\27";
+}
+.icon-infoCircle:before {
+    content: "\24d8";
+}
+.icon-info:before {
+    content: "\69";
+}
+.icon-infinite:before {
+    content: "\221e";
+}
+.icon-hraHeart:before {
+    content: "\e040";
+}
+.icon-home:before {
+    content: "\e041";
+}
+.icon-heartPlus:before {
+    content: "\e043";
+}
+.icon-heart:before {
+    content: "\2764";
+}
+.icon-healthPrizes:before {
+    content: "\e044";
+}
+.icon-healthInfo:before {
+    content: "\e04d";
+}
+.icon-missions:before {
+    content: "\e04e";
+}
+.icon-gift:before {
+    content: "\e04f";
+}
+.icon-gear:before {
+    content: "\2699";
+}
+.icon-follow:before {
+    content: "\e050";
+}
+.icon-fitnessBar:before {
+    content: "\e06a";
+}
+.icon-file:before {
+    content: "\e06b";
+}
+.icon-facebook:before {
+    content: "\e072";
+}
+.icon-explore:before {
+    content: "\e083";
+}
+.icon-experts:before {
+    content: "\e084";
+}
+.icon-edit:before {
+    content: "\270e";
+}
+.icon-computer:before {
+    content: "\e085";
+}
+.icon-comment:before {
+    content: "\e086";
+}
+.icon-checkmarkCircleSolid:before {
+    content: "\2714";
+}
+.icon-checkmarkCircleLine:before {
+    content: "\2611";
+}
+.icon-checkmark:before {
+    content: "\2713";
+}
+.icon-chat:before {
+    content: "\e087";
+}
+.icon-chart:before {
+    content: "\e088";
+}
+.icon-cancelCircleSolid:before {
+    content: "\2297";
+}
+.icon-camera:before {
+    content: "\e089";
+}
+.icon-calendar:before {
+    content: "\e08a";
+}
+.icon-bookmarks:before {
+    content: "\e08c";
+}
+.icon-bookmark:before {
+    content: "\e08d";
+}
+.icon-bicycle:before {
+    content: "\e095";
+}
+.icon-award:before {
+    content: "\e098";
+}
+.icon-arrowUpLine:before {
+    content: "\2227";
+}
+.icon-arrowRightSolid:before {
+    content: "\25b6";
+}
+.icon-arrowRightLine:before {
+    content: "\276f";
+}
+.icon-arrowLeftLine:before {
+    content: "\276e";
+}
+.icon-arrowDownSolid:before {
+    content: "\25bc";
+}
+.icon-arrowDownLine:before {
+    content: "\2228";
+}
+.icon-addressBook:before {
+    content: "\e0a0";
+}
+.icon-addContact:before {
+    content: "\e0a2";
+}
+.icon-activity:before {
+    content: "\e0a6";
+}
+.icon-person:before {
+    content: "\e0d5";
+}
+.icon-continuous:before {
+    content: "\27f3";
+}
+.icon-arrowLeftSolid:before {
+    content: "\25c0";
+}
+.icon-arrowUpSolid:before {
+    content: "\25b2";
+}
+.icon-giftCards:before {
+    content: "\e0d6";
+}
+.icon-coin:before {
+    content: "\e070";
+}
+.icon-rewards:before {
+    content: "\e014";
+}
+.icon-distance:before {
+    content: "\e0da";
+}
+.icon-walk:before {
+    content: "\e062";
+}
+.icon-locationAlt:before {
+    content: "\e0d8";
+}
+.icon-lockedAlt:before {
+    content: "\e0d9";
+}
+.icon-trophyAlt:before {
+    content: "\e0db";
+}
+.icon-chartAlt:before {
+    content: "\e0dc";
+}

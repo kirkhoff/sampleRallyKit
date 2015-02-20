@@ -1,0 +1,33 @@
+@mixin fluidContainer($firstWidth:60px, $secondWidth:100%, $thirdWidth:0) {
+    @include box-sizing(border-box);
+    @include clearfix;
+    padding-left: $firstWidth!important;
+    padding-right: $thirdWidth!important;
+    position: relative;
+    width: 100%;
+    > div {
+        @include box-sizing(border-box);
+        float: left!important;
+        position: relative!important;
+    }
+    > div:first-child {
+        @if $firstWidth == 0 {
+            display: none!important;
+        } @else {
+            margin-left: $firstWidth * -1!important;
+            width: $firstWidth!important;
+        }
+    }
+    > div:first-child + div {
+        width: $secondWidth!important;
+    }
+    > div:first-child + div + div {
+        @if $thirdWidth == 0 {
+            display: none!important;
+        } @else {
+            display: inline-block!important;
+            margin-right: $thirdWidth * -1!important;
+            width: $thirdWidth!important;
+        }
+    }
+}

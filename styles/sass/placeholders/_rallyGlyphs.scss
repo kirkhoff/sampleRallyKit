@@ -1,0 +1,26 @@
+%rallyGlyphs {
+    font-family: 'RallyGlyphs';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    text-transform: none!important;
+}
+
+%icon:before {
+    @extend %rallyGlyphs;
+    position: relative;
+    margin-right: 5px;
+    font-size: 20px;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+%iconGlyph {
+    @extend %rallyGlyphs;
+    font-size: 20px;
+    line-height: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+}

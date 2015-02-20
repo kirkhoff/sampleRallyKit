@@ -1,0 +1,128 @@
+@mixin tooltip($background:#fff, $borderColor:$baseMutedDark) {
+    background: $background;
+    border: 1px solid $borderColor;
+    border-radius: 2px;
+    box-shadow: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 5px 1px;
+    &:before {
+        border: solid;
+        border-color: shade($borderColor, 10%) transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        left: 50%;
+        margin-left: -10px;
+        position: absolute;
+        top: -10px;
+        z-index: 99;
+    }
+    &:after {
+        border: solid;
+        border-color: $background transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        left: 50%;
+        margin-left: -10px;
+        position: absolute;
+        top: -9px;
+        z-index: 99;
+    }
+}
+@mixin topTooltip($background:#fff, $borderColor:$greyDark) {
+    @include tooltip($background, $borderColor);
+    &:before, &:after {
+        border-width: 10px 10px 0px 10px;
+        top: auto;
+    }
+    &:before {
+        bottom: -10px;
+    }
+    &:after {
+        bottom: -9px;
+    }
+}
+@mixin leftTooltip($background:#fff, $borderColor:$greyDark) {
+    background: $background;
+    border: 1px solid $borderColor;
+    border-radius: 2px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 5px 1px;
+    &:before {
+        @include transform(rotate(-90deg));
+        border: solid;
+        border-color: shade($borderColor, 10%) transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        left: -15px;
+        margin-top: -10px;
+        position: absolute;
+        top: 50%;
+        z-index: 99;
+    }
+    &:after {
+        @include transform(rotate(-90deg));
+        border: solid;
+        border-color: $background transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        left: -14px;
+        margin-top: -10px;
+        position: absolute;
+        top: 50%;
+        z-index: 99;
+    }
+}
+
+@mixin rightTooltip($background:#fff, $borderColor:$greyDark, $marginTop: -6px) {
+    background: $background;
+    border: 1px solid $borderColor;
+    border-radius: 2px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 5px 1px;
+    &:before {
+        @include transform(rotate(90deg));
+        border: solid;
+        border-color: shade($borderColor, 10%) transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        margin-top: $marginTop;
+        position: absolute;
+        right: -15px;
+        top: 57%;
+        z-index: 99;
+    }
+    &:after {
+        @include transform(rotate(90deg));
+        border: solid;
+        border-color: $background transparent;
+        border-width: 0 10px 10px 10px;
+        content: "";
+        display: block;
+        margin-top: $marginTop;
+        position: absolute;
+        right: -14px;
+        top: 57%;
+        z-index: 99;
+    }
+}
+
+%actionTooltip {
+    @include box-sizing(border-box);
+    background-color: $secondaryVeryLight;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: darken($secondaryColor, 20%);
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    left: 0;
+    padding: 4px 0px;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+}

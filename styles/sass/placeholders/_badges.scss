@@ -1,0 +1,54 @@
+/* coach badge placeholders (position might need to be tweaked in element because it is relative to parent */
+%coach30 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -1px;
+    display: block;
+    height: 9px;
+    position: absolute;
+    top: 22px;
+    width: 16px;
+}
+
+%coach40 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -20px;
+    display: block;
+    height: 12px;
+    position: absolute;
+    width: 21px;
+}
+
+%coach60 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -42px;
+    display: block;
+    height: 15px;
+    left: 10px;
+    position: absolute;
+    top: 58px;
+    width: 30px;
+}
+
+%coach75 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -93px;
+    display: block;
+    height: 19px;
+    position: absolute;
+    width: 38px;
+}
+
+%coach90 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -122px;
+    display: block;
+    height: 19px;
+    position: absolute;
+    top: 74px;
+    width: 91px;
+}
+
+%coach150 {
+    background: url(/img/sprites/badgesSprite.png) no-repeat -5px -148px;
+    display: block;
+    height: 32px;
+    left: 32px;
+    position: absolute;
+    top: 133px;
+    width: 150px;
+}

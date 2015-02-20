@@ -1,0 +1,141 @@
+%zenProgress {
+    .progressBar {
+        @include box-sizing(border-box);
+        background-color: $greyLight;
+        display: block;
+        height: 10px;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        .progress {
+            background-color: $secondaryColor;
+            height: 100%;
+        }
+        .time {
+            background-color: $linkColor;
+        }
+        .bar {
+            background: #eee;
+            height: 30px;
+            margin: 0 auto 25px;
+            position: relative;
+            width: 100%;
+            .progress {
+                @include box-sizing(border-box);
+                @include transition(all .75s ease-in);
+                background-color: $secondaryColor;
+                height: 30px;
+                margin-top: 5px;
+                max-width: 100%;
+                overflow: visible;
+                position: relative;
+                z-index: 2;
+                &.time {
+                    background-color: $linkColor;
+                }
+                &.noTooltip {
+                    margin-top: 40px;
+                }
+                .new {
+                    @include transition(all .75s ease-in);
+                    background-color: $secondaryVeryLight;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    .leftTooltip,
+                    .rightTooltip {
+                        display: none;
+                    }
+                    .leftTooltip {
+                        background: $secondaryColor;
+                        bottom: 40px;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                        height: auto;
+                        line-height: 11px;
+                        padding: 5px;
+                        position: absolute;
+                        right: 100%;
+                        text-align: right;
+                        &:before {
+                            border: solid;
+                            border-color: $secondaryColor transparent;
+                            border-width: 12px 0 0 10px;
+                            bottom: -9px;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            z-index: 0;
+                        }
+                        .num {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                    .rightTooltip {
+                        background: $secondaryVeryLight;
+                        bottom: 40px;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                        height: auto;
+                        left: 100%;
+                        line-height: 11px;
+                        padding: 5px;
+                        position: absolute;
+                        text-align: left;
+                        &:before {
+                            border: solid;
+                            border-color: $secondaryVeryLight transparent;
+                            border-width: 12px 10px 0 0;
+                            bottom: -9px;
+                            content: '';
+                            display: block;
+                            left: 0;
+                            position: absolute;
+                            z-index: 0;
+                        }
+                        .num {
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .progressText {
+        color: $secondaryColor;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 100%;
+        margin-top: 6px;
+        .daysLeft {
+            color: $greyMedium;
+        }
+    }
+    .ticks {
+        @include box-sizing(border-box);
+        display: block;
+        margin: 5px auto 20px;
+        position: absolute;
+        top: 100%;
+        white-space: nowrap;
+        width: 100%;
+        > span {
+            color: $greyLight;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            &.last-child {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}

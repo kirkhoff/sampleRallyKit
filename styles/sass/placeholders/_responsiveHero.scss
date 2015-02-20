@@ -1,0 +1,211 @@
+%responsiveHero {
+    margin-top: -$marginFromHeader - 1;
+    min-height: $defaultHeroHeight;
+    position: relative;
+    .backBtn {
+        @include opacity(.85);
+        color: white;
+        font-size: 1.17em;
+        font-weight: bold;
+        i {
+            margin-right: .45em;
+            position: relative;
+            top: 2px;
+        }
+        &:hover {
+            @include opacity(1);
+            color: white;
+        }
+    }
+    .heading {
+        @include transition(all 200ms);
+        font-size: 4em;
+        line-height: 1em;
+        margin: 0 0 .6em;
+        position: relative;
+        top: .3em;
+    }
+    .heroImgWrap {
+        background-color: $greyDark;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    .heroBody {
+        overflow: hidden;
+        .heroContent {
+            &,
+            label {
+                color: white;
+            }
+        }
+    }
+
+    .heroContent,
+    .sideBarContent {
+        @include box-sizing(border-box);
+    }
+
+    .heroContent {
+        padding: 30px 5% 10px 10px;
+    }
+
+    &.withSideBar {
+        .heroBody {
+            @extend %clearfix;
+            min-height: $defaultHeroHeight;
+        }
+        .heroContent,
+        .sideBarContent {
+            float: left;
+        }
+        .heroContent {
+            margin-right: flex-gutter();
+            width: flex-grid(17.5);
+        }
+    }
+
+    .sideBarContent {
+        color: $bubbleDarkGrey;
+        padding: 20px;
+        position: relative;
+        width: flex-grid(6.5);
+        &:before {
+            @include opacity(.9);
+            content: '';
+            background-color: white;
+            bottom: -5000%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+        .content {
+            margin-bottom: 0 !important;
+        }
+        .summary {
+            font-size: 1.33em;
+            line-height: 1.37em;
+            min-height: 150px;
+            margin: 3em 0 1.67em;
+        }
+        .stat {
+            border-bottom: 1px solid $greyLight;
+            padding: 1.875em 0;
+            .category {
+                font-size: 1.3em;
+                font-weight: 500;
+                line-height: 1.4em;
+            }
+            .data {
+                font-size: 4em;
+                font-weight: 300;
+                line-height: 100%;
+            }
+        }
+        button.joined {
+            font-size: 1.17em;
+            min-width: 65px;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: left;
+            &.canUnjoin {
+                padding-left: 4px;
+            }
+        }
+    }
+
+    blockquote {
+        color: $linkColor;
+        display: inline-block;
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 1.3em;
+        margin: 0.6em 1em;
+        padding-left: 0;
+        position: relative;
+        width: 160px;
+        span {
+            font-weight: bold;
+        }
+        i {
+            font-size: 12px;
+        }
+        .icon-quoteStart {
+            margin-left: -17px;
+            position: absolute;
+            top: -3px;
+        }
+        .icon-quoteEnd {
+            bottom: -1px;
+            position: absolute;
+            right: -20px;
+        }
+    }
+}
+
+@media only screen
+and (min-width: 0)
+and (max-width: 750px) {
+    .responsiveHero {
+        &,
+        .heroBody {
+            min-height: 0 !important;
+        }
+        .heroContent,
+        .sideBarContent {
+            padding: 15px;
+        }
+        .heading {
+            font-size: 3em;
+            margin: .3em 0 1em !important;
+            top: 0 !important;
+        }
+        .sideBarContent {
+            .summary {
+                min-height: 0;
+                margin: .5em 0;
+            }
+        }
+    }
+}
+
+@media only screen
+and (min-width: 0)
+and (max-width: 767px) {
+    .responsiveHero {
+        font-size: 12px;
+        margin-top: 0;
+        &.withSideBar {
+            .heroContent,
+            .sideBarContent {
+                float: none;
+                margin: 0;
+                width: auto;
+                .stats {
+                    font-size: 1.2em;
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen
+and (min-width: 0)
+and (max-width: 500px) {
+    .responsiveHero {
+        .heroContent,
+        .sideBarContent {
+            padding: 10px;
+        }
+    }
+}

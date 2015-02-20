@@ -1,0 +1,31 @@
+@mixin phoneOnly() {
+    @media (max-width: $max-phone-width) {
+        @content;
+    }
+}
+
+@mixin tabletOnly() {
+    @media (min-width: $max-phone-width + 1) and (max-width: $max-tablet-width) {
+        @content;
+    }
+}
+
+@mixin mobileDevices() {
+    @media (max-width: $max-tablet-width) {
+        @content;
+    }
+}
+
+@mixin desktopOnly() {
+    @media (min-width: $max-tablet-width + 1) {
+        @content;
+    }
+}
+
+@mixin desktopAndTablet() {
+    @media (min-width: $max-phone-width + 1) {
+        @content;
+    }
+}
+
+

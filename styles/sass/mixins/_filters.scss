@@ -1,0 +1,13 @@
+/* CSS3 Effect Filters */
+@mixin blur($pixel: 2px, $svgInfo: '/styles/css/blur.svg#blur') {
+    //svgInfo is required for Firefox
+    //requires the blur.svg file
+    filter: blur($pixel);
+    filter: url($svgInfo);
+    -moz-filter: blur($pixel);
+    -ms-filter: blur($pixel);
+    -o-filter: blur($pixel);
+    -webkit-filter: blur($pixel);
+    //IE 8-9
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$pixel');
+}

@@ -1,0 +1,447 @@
+/* Tabs */
+div.ui-tabs {
+    div.ui-tabs-hide {
+        display: none !important;
+    }
+    div.ui-tabs-panel {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+/* Datepicker */
+div.ui-datepicker {
+    @include tooltip;
+    display: none;
+    width: 250px;
+    div.ui-datepicker-header {
+        position: relative;
+        .ui-datepicker-prev,
+        .ui-datepicker-next {
+            position: absolute;
+            top: 0;
+            .ui-icon-circle-triangle-w,
+            .ui-icon-circle-triangle-e {
+                background: url(/img/layout/icon_datepicker_arrows.png) no-repeat;
+                cursor: pointer;
+                display: block;
+                height: 17px;
+                text-indent: -9999px;
+                width: 15px;
+            }
+            &.ui-state-disabled .ui-icon-circle-triangle-w,
+            &.ui-state-disabled .ui-icon-circle-triangle-e {
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+        .ui-datepicker-prev {
+            left: 30px;
+            .ui-icon-circle-triangle-w {
+                background-position: 0 -17px;
+                &:hover {
+                    background-position: 0 -34px;
+                }
+            }
+            &.ui-state-disabled .ui-icon-circle-triangle-w,
+            &.ui-state-disabled .ui-icon-circle-triangle-w:hover {
+                background-position: 0 0;
+            }
+        }
+        .ui-datepicker-next {
+            right: 30px;
+            .ui-icon-circle-triangle-e {
+                background-position: -15px -17px;
+                &:hover {
+                    background-position: -15px -34px;
+                }
+            }
+            &.ui-state-disabled .ui-icon-circle-triangle-e,
+            &.ui-state-disabled .ui-icon-circle-triangle-e:hover {
+                background-position: -15px 0;
+            }
+        }
+        div.ui-datepicker-title {
+            color: $baseMutedMedium;
+            font-size: 12px;
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+    table.ui-datepicker-calendar {
+        margin-top: 15px;
+        table-layout: fixed;
+        width: 100%;
+        thead {
+            color: $greyMedium;
+            font-variant: small-caps;
+        }
+        td {
+            height: 25px;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            span {
+                text-align: center;
+            }
+            a {
+                color: $greyVeryDark;
+                display: block;
+                font-weight: bold;
+                margin: 4px 0;
+                padding: 3px 0;
+                text-align: center;
+                &:hover {
+                    background-color: $secondaryLight;
+                    color: #FFF;
+                    font-weight: bold;
+                }
+                &.ui-state-active {
+                    background-color: $secondaryColor;
+                    color: #FFF;
+                    font-weight: bold;
+                }
+            }
+            &.ui-datepicker-unselectable span {
+                background: $greyVeryLight;
+                color: $greyLight;
+                display: block;
+                margin: 4px 0;
+                padding: 3px 0;
+            }
+        }
+    }
+}
+
+ul.ui-datepicker {
+    @include tooltip;
+    margin: 22px 0 0 -125px;
+    width: 250px;
+    &,
+    th button {
+        color: $greyMedium;
+    }
+    td {
+        padding: 0;
+    }
+    span {
+        text-align: center;
+        &.muted {
+            background: #f2f2f2;
+            color: $greyMedium;
+        }
+    }
+    tbody button {
+        margin: 0;
+        &.btn.day {
+            width: 100%;
+        }
+        &.btn-info span {
+            color: white;
+            background: $secondaryColor;
+        }
+        &.active,
+        &:hover {
+            background: $secondaryColor;
+            color: white;
+        }
+    }
+    .lbls {
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+}
+
+/* Time Picker */
+div.ui-datepicker-div {
+    margin-top: 480px;
+}
+
+div.ui-timepicker-div {
+    border-top: 1px solid #EEE;
+    margin: 10px;
+    padding-top: 10px;
+    .ui_tpicker_time_label,
+    .ui_tpicker_hour_label,
+    .ui_tpicker_minute_label {
+        color: $baseMutedMedium;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .ui_tpicker_time_label {
+        margin-bottom: -30px;
+    }
+    .ui_tpicker_time {
+        color: $baseDark;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .ui-widget-header {
+        margin-bottom: 8px;
+    }
+    dl {
+        text-align: left;
+        dt {
+            height: 30px;
+            margin-bottom: -25px;
+        }
+        dd {
+            margin: 0 10px 10px 65px;
+        }
+    }
+    td {
+        font-size: 90%;
+    }
+}
+
+.ui-tpicker-grid-label {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Horizontal Sliders */
+div.ui-slider-horizontal {
+    background: #EEE;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 white inset;
+    display: block;
+    height: 6px;
+    position: relative;
+    a.ui-slider-handle {
+        @include background(linear-gradient($baseMutedMedium 0%, shade($baseMutedMedium, 40%) 100%));
+        @include box-sizing(border-box);
+        border: 1px solid shade($baseMutedMedium, 20%);
+        border-radius: 5px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+        cursor: default;
+        height: 12px;
+        margin-left: -3px;
+        outline: 0;
+        position: absolute;
+        top: -3px;
+        width: 12px;
+        z-index: 2;
+        &:hover {
+            @include background(linear-gradient(shade($baseMutedMedium, 10%) 0%, shade($baseMutedMedium, 60%) 100%));
+            box-shadow: 0 0 3px 0 $baseMutedMedium, 0 1px 0 rgba(255, 255, 255, .75) inset;
+        }
+        &:active {
+            @include background(linear-gradient(shade($baseMutedMedium, 20%) 0%, shade($baseMutedMedium, 70%) 100%));
+            box-shadow: 0 0 3px 0 $baseMutedMedium, 0 1px 0 rgba(255, 255, 255, .75) inset;
+        }
+    }
+}
+
+/* Autocomplete */
+ul.ui-autocomplete {
+    background-color: #fff;
+    border: 1px solid $baseMedium;
+    border-radius: 0 0 3px 3px;
+    margin: 0;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0;
+    position: absolute;
+    li {
+        margin: 0;
+        width: 100%;
+        a {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            color: $baseMutedMedium;
+            display: block;
+            font-size: 12px;
+            padding: 3px 10px;
+            width: 100%;
+            &:hover,
+            &.ui-state-hover,
+            &.ui-state-focus {
+                background-color: $linkColor;
+                border-bottom-color: $baseMutedDark;
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+                text-shadow: 0 -1px 0 shade($linkColor, 10%);
+            }
+            img {
+                @include roundAvatar(30px);
+                margin: 0px 5px 0px -5px;
+                vertical-align: middle;
+            }
+        }
+    }
+    .noMatches {
+        display: block;
+        font-style: italic;
+        margin: 5px;
+    }
+}
+.tooltip.top {
+    .tooltip-arrow {
+        border-top-color: #FFF;
+        bottom: 1px;
+        z-index: 2;
+    }
+    .tooltip-arrow.border {
+        border-top-color: $greyVeryDark;
+        border-width: 6px 6px 0;
+        bottom: 0;
+        margin-left: -6px;
+        z-index: 1;
+    }
+    .tooltip-inner {
+        background: #fff;
+        border: 1px solid $greyVeryDark;
+        color: $greyVeryDark;
+        font-weight: 400;
+        padding: 3px 15px;
+    }
+}
+.numberPicker {
+    .errorWidget.ui-bottom {
+        margin-top: 4px;
+        &:before {
+            left: 35px;
+        }
+    }
+    .inputWrap {
+        position: relative;
+        height: 31px;
+        width: 68px;
+    }
+    .numEntry {
+        @include box-sizing(border-box);
+        padding: 7px 14px 7px 7px;
+        width: 67px;
+    }
+    .decrementBtn,
+    .incrementBtn {
+        height: auto;
+        margin: 0;
+        position: absolute;
+        i {
+            color: #4D4D4D;
+            font-size: .9em;
+        }
+    }
+    .incrementBtn {
+        top: 0;
+    }
+    .decrementBtn {
+        bottom: -2px;
+    }
+    .buttons {
+        height: 30px;
+        position: absolute;
+        right: 5px;
+        width: 12px;
+    }
+}
+/* Step Viewer */
+div.stepViewer {
+    position: relative;
+    ul {
+        font-size: 0;
+        white-space: nowrap;
+    }
+    li {
+        display: inline-block;
+        font-size: 12px;
+        position: relative;
+        vertical-align: top;
+        white-space: normal;
+    }
+    .nav {
+        @include animation-delay(.5s);
+        @include animation-fill-mode(forwards !important);
+        color: $greyLight;
+        font-size: 60px;
+        margin-top: -.6em;
+        opacity: 0;
+        overflow: visible;
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        &:hover {
+            color: $secondaryColor;
+        }
+        &.prev {
+            @include animation(bounceInLeft .3s);
+            left: -8%;
+        }
+        &.next {
+            @include animation(bounceInRight .3s);
+            right: -8%;
+        }
+        &:disabled {
+            display: none;
+        }
+    }
+}
+
+@include keyframes(bounceIn) {
+    0%,100%,20%,40%,60%,80% {
+        @include transition-timing-function(cubic-bezier(.215,.61,.355,1));
+    }
+    0% {
+        @include transform(scale3d(.3,.3,.3));
+        opacity: 0;
+    }
+    20% {
+        @include transform(scale3d(1.1,1.1,1.1));
+    }
+    40% {
+        @include transform(scale3d(.9,.9,.9));
+    }
+    60% {
+        @include transform(scale3d(1.03,1.03,1.03));
+        opacity: 1;
+    }
+    80% {
+        @include transform(scale3d(.97,.97,.97));
+    }
+    100% {
+        @include transform(scale3d(1,1,1));
+        opacity: 1;
+    }
+}
+
+@include keyframes(bounceInLeft) {
+    0%,100%,50%,75%,80% {
+        @include transition-timing-function(cubic-bezier(.215,.61,.355,1));
+    }
+    0% {
+        @include transform(translate3d(0,0,0));
+        opacity: 0;
+    }
+    50% {
+        @include transform(translate3d(-10px,0,0));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+@include keyframes(bounceInRight) {
+    0%,100%,60%,75%,90% {
+        @include transition-timing-function(cubic-bezier(.215,.61,.355,1));
+    }
+    0% {
+        @include transform(translate3d(0,0,0));
+        opacity: 0;
+    }
+    50% {
+        @include transform(translate3d(10px,0,0));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+
