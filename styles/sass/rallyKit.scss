@@ -4,7 +4,6 @@
 @import 'mixins/opacity';
 @import 'mixins/arrow';
 @import 'mixins/clearfix';
-@import 'mixins/media';
 @import 'mixins/fluidObjects';
 @import 'mixins/printColorAdjust';
 @import 'mixins/fluidContainer';
@@ -13,14 +12,11 @@
 @import 'mixins/zenButton';
 @import 'mixins/sprite';
 @import 'mixins/spriteGallery';
-@import 'mixins/connectionButton';
-@import 'mixins/cornerRibbon';
 @import 'mixins/iconButton';
 @import 'mixins/filters';
 @import 'mixins/userSelect';
 @import 'mixins/keyframes';
 @import 'mixins/placeholder';
-@import 'placeholders/completedCount';
 @import 'placeholders/clearfix';
 @import 'placeholders/zenNav';
 @import 'placeholders/zenProgress';
@@ -29,8 +25,6 @@
 @import 'placeholders/headerAllCaps';
 @import 'placeholders/ellipsis';
 @import 'placeholders/badges';
-@import 'placeholders/modalUI';
-@import 'placeholders/interiorHero';
 @import 'placeholders/responsiveHero';
 @import 'placeholders/hidden508';
 @import 'mixins/breakpoints';

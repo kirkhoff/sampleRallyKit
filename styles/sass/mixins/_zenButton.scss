@@ -178,29 +178,29 @@
     }
 }
 
-//%recommendButton {
-//    @include zenButton($baseMutedMedium, 7px 6px 6px);
-//    font-weight: normal;
-//    margin-left: 4px;
-//    position: relative;
-//    text-transform: none;
-//
-//    &::-moz-focus-inner {
-//        border: 0;
-//        padding: 0;
-//    }
-//}
+%recommendButton {
+    @include zenButton($baseMutedLight, 7px 6px 6px);
+    font-weight: normal;
+    margin-left: 4px;
+    position: relative;
+    text-transform: none;
 
-//%removeBtn {
-//    @include zenButton($baseMutedMedium, 0, 20px, 20px);
-//    border-radius: 10px;
-//    > i {
-//        font-size: 8px;
-//        line-height: 20px;
-//    }
-//    &:hover {
-//        background-color: $red;
-//        border-color: shade($red, 10%);
-//        color: white;
-//    }
-//}
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+%removeBtn {
+    @include zenButton($baseMutedMedium, 0, 20px, 20px);
+    border-radius: 10px;
+    > i {
+        font-size: 8px;
+        line-height: 20px;
+    }
+    &:hover {
+        background-color: $red;
+        border-color: shade($red, 10%);
+        color: white;
+    }
+}
